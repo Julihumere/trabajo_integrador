@@ -1,0 +1,384 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-image: url("../img/fondo.jpg");
+  background-size: cover;
+}
+
+/* PANTALLA DE LOGIN */
+
+.home_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.home_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 100%;
+}
+.home_title {
+  color: white;
+  font-size: 60px;
+  margin-left: 20px;
+}
+
+.home_header p {
+  color: white;
+  font-size: 20px;
+}
+
+.home_section {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 40vh;
+  width: 20%;
+  margin-top: 50px;
+  border-radius: 40px;
+  padding: 40px;
+}
+
+.box_button {
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+.box_label {
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box_input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.box_container_button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.box_container_button span {
+  color: white;
+  font-size: 15px;
+}
+
+/* PANTALLA DE REGISTRO */
+
+.register_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.register_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 20vh;
+  width: 100%;
+}
+.register_title {
+  color: white;
+  font-size: 60px;
+  margin-left: 20px;
+}
+
+.register_header p {
+  color: white;
+  font-size: 20px;
+}
+
+.register_section {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  height: 40vh;
+  width: 50%;
+  margin-top: 50px;
+  border-radius: 40px;
+  padding: 40px;
+}
+
+.register_box_button {
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+.register_box_label {
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.register_box_input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.register_box_container_button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.register_box_container_button span {
+  color: white;
+  font-size: 15px;
+}
+
+/* /libros */
+
+.books_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 50px;
+}
+.books_title {
+  color: white;
+  font-size: 60px;
+  margin-left: 20px;
+}
+
+.books_header p {
+  color: white;
+  font-size: 20px;
+}
+
+.books_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  justify-items: center;
+  max-height: 90vh; /* O la altura máxima deseada */
+
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+.books_container::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+.books_container::-webkit-scrollbar-track {
+  background: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Color de fondo de la barra de desplazamiento */
+}
+
+.books_container::-webkit-scrollbar-thumb {
+  background: #888; /* Color del "pulgarcito" de la barra de desplazamiento */
+  border-radius: 5px; /* Borde redondeado */
+}
+
+.book {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.book section {
+  width: 50%;
+}
+
+.book_title {
+  color: white;
+  font-size: 24px;
+}
+
+.book_picture {
+  width: 200px;
+  height: 250px;
+}
+
+.book_info {
+  padding: 0;
+  color: white;
+  font-size: 14px;
+}
+
+.book_info span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.book_button {
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 60%;
+}
+
+/* Reserva */
+.reserva_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+.reserva_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reserva_section input {
+  align-self: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 60%;
+  height: 30px;
+}
+
+.reserva_section_title {
+  color: white;
+  font-size: 60px;
+  margin-left: 20px;
+}
+
+.reserva_section_text {
+  color: white;
+  font-size: 20px;
+}
+
+.reserva_container_buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 20vw;
+}
+
+.reserva_section_button {
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+
+.reserva_section_button_volver {
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+
+/* Reserva exitosa */
+.reserva_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 30vw;
+}
+
+.reserva_section_title {
+  color: white;
+  font-size: 60px;
+  margin-left: 20px;
+}
+
+.reserva_section_text {
+  color: white;
+  font-size: 20px;
+}
+
+.reserva_section_button {
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}

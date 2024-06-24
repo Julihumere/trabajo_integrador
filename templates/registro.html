@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='img/favicon.webp') }}"
+      type="image/webp"
+    />
+    <title>Biblioteca "Python"</title>
+  </head>
+  <body>
+    <div class="register_container">
+      <section class="register_header">
+        <h1 class="register_title">Biblioteca "Python"</h1>
+        <p>Este es el trabajo integrador de la materia Programación Web I</p>
+      </section>
+      <form action="/registro" method="post" class="register_section">
+        <label class="register_box_label"
+          >Nombre
+          <input
+            class="register_box_input"
+            type="text"
+            name="nombre"
+            placeholder="Ingrese su nombre"
+        /></label>
+        <label class="register_box_label"
+          >Apellido
+          <input
+            class="register_box_input"
+            type="text"
+            name="apellido"
+            placeholder="Ingrese su apellido"
+        /></label>
+        <label class="register_box_label"
+          >Número de documento
+          <input
+            class="register_box_input"
+            type="number"
+            name="documento"
+            placeholder="Ingrese su número de documento"
+        /></label>
+        <label class="register_box_label"
+          >Dirección
+          <input
+            class="register_box_input"
+            type="text"
+            name="direccion"
+            placeholder="Ingrese su dirección"
+        /></label>
+        <label class="register_box_label"
+          >Telefono
+          <input
+            class="register_box_input"
+            type="number"
+            name="telefono"
+            placeholder="Ingrese su telefono"
+        /></label>
+        <label class="register_box_label"
+          >Email
+          <input
+            class="register_box_input"
+            type="email"
+            name="email"
+            placeholder="Ingrese su email"
+        /></label>
+
+        <label class="register_box_label"
+          >Contraseña
+          <input
+            class="register_box_input"
+            type="password"
+            name="password"
+            placeholder="Ingrese su contraseña"
+        /></label>
+        <aside class="register_box_container_button">
+          <button class="register_box_button">Registrarse</button>
+          <span>¿Ya tienes cuenta? <a href="/">Iniciar sesión</a></span>
+        </aside>
+      </form>
+    </div>
+  </body>
+</html>

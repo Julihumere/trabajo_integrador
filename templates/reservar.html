@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='img/favicon.webp') }}"
+      type="image/webp"
+    />
+    <title>Biblioteca "Python"</title>
+  </head>
+  <body>
+    <div class="home_container">
+      <section class="home_header">
+        <h1 class="home_title">Biblioteca "Python"</h1>
+        <p>Este es el trabajo integrador de la materia Programación Web I</p>
+      </section>
+      <section class="reserva_section">
+        <h2 class="reserva_section_title">Reserva</h2>
+        <form action="/reservar" method="post" class="reserva_form">
+          <input type="date" name="fecha" id="fecha" />
+          <input type="hidden" name="id_libro" value="{{ id_libro }}" />
+          <input type="hidden" name="id_cliente" value="{{ id_cliente }}" />
+          <section class="reserva_container_buttons">
+            <button class="reserva_section_button" type="submit">Reservar</button>
+            <button class="reserva_section_button_volver"><a  href="/libros" class="reserva_section_button">Volver al inicio</a></button>
+          </section>
+      </section>
+    </div>
+  </body>
+</html>

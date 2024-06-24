@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='img/favicon.webp') }}"
+      type="image/webp"
+    />
+    <title>Biblioteca "Python"</title>
+  </head>
+  <body>
+    <div class="home_container">
+      <section class="home_header">
+        <h1 class="home_title">Biblioteca "Python"</h1>
+        <p>Este es el trabajo integrador de la materia Programación Web I</p>
+      </section>
+      <form action="/" method="post" class="home_section">
+        <label class="box_label"
+          >Email
+          <input
+            class="box_input"
+            type="email"
+            name="email"
+            placeholder="Ingrese su email"
+        /></label>
+
+        <label class="box_label"
+          >Contraseña
+          <input
+            class="box_input"
+            type="password"
+            name="password"
+            placeholder="Ingrese su contraseña"
+        /></label>
+        <aside class="box_container_button">
+          <button class="box_button">Inicar sesión</button>
+          <span>¿No tienes cuenta? <a href="/registro">Regístrate</a></span>
+        </aside>
+      </form>
+    </div>
+  </body>
+</html>
