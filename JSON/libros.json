@@ -7,7 +7,8 @@
     "publicacion": 1967,
     "genero": "Novela",
     "cantidad_disponible": 3,
-    "picture": "https://imgs.search.brave.com/Owd-sos1iTSTSxnIW-IIAIN1Oto4MzsiQyZxBo3VHzA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFwdGVodVRJT0wu/anBn"
+    "picture": "https://imgs.search.brave.com/Owd-sos1iTSTSxnIW-IIAIN1Oto4MzsiQyZxBo3VHzA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFwdGVodVRJT0wu/anBn",
+    "fecha_publicacion": "1967-05-30"
   },
   {
     "id_libro": 2,
@@ -17,7 +18,8 @@
     "publicacion": 1605,
     "genero": "Novela",
     "cantidad_disponible": 2,
-    "picture": "https://imgs.search.brave.com/4EexGlTfHYBxXeSzoBp-9WZf3Oej3gCw6S5icySXiDs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDEwNHBhZU1YV0wu/anBn"
+    "picture": "https://imgs.search.brave.com/4EexGlTfHYBxXeSzoBp-9WZf3Oej3gCw6S5icySXiDs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDEwNHBhZU1YV0wu/anBn",
+    "fecha_publicacion": "1605-01-16"
   },
   {
     "id_libro": 3,
@@ -27,7 +29,8 @@
     "publicacion": 2001,
     "genero": "Misterio",
     "cantidad_disponible": 4,
-    "picture": "https://imgs.search.brave.com/vZ4hHtmbE1qshXx69PoRxvbEjhY8N8idKA1yQlj6XqM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cmVzdW1lbmxpYnJv/LmNvbS9pbWcvbGli/cm9zL2xhLXNvbWJy/YS1kZWwtdmllbnRv/LmpwZw"
+    "picture": "https://imgs.search.brave.com/vZ4hHtmbE1qshXx69PoRxvbEjhY8N8idKA1yQlj6XqM/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cmVzdW1lbmxpYnJv/LmNvbS9pbWcvbGli/cm9zL2xhLXNvbWJy/YS1kZWwtdmllbnRv/LmpwZw",
+    "fecha_publicacion": "2001-01-01"
   },
   {
     "id_libro": 4,
@@ -37,7 +40,8 @@
     "publicacion": 1949,
     "genero": "Distopía",
     "cantidad_disponible": 5,
-    "picture": "https://imgs.search.brave.com/LTNWNd1amvJ8RDBmq5WNlEuMrvHd6Rqa-lwO3NmNpkQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/dHhhbGFwYXJ0YS5l/dXMvQXJ0aWN1bG9z/L21lZC8xOTg0Li1M/YS1ub3ZlbGEtZ3Jh/ZmljYS5qcGc"
+    "picture": "https://imgs.search.brave.com/LTNWNd1amvJ8RDBmq5WNlEuMrvHd6Rqa-lwO3NmNpkQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/dHhhbGFwYXJ0YS5l/dXMvQXJ0aWN1bG9z/L21lZC8xOTg0Li1M/YS1ub3ZlbGEtZ3Jh/ZmljYS5qcGc",
+    "fecha_publicacion": "1949-06-08"
   },
   {
     "id_libro": 5,
@@ -47,7 +51,8 @@
     "publicacion": 1943,
     "genero": "Fábula",
     "cantidad_disponible": 6,
-    "picture": "https://imgs.search.brave.com/LSkzL5IKFJCifEUekF3xmRw0CwjORxy3jiexvq2Jkqw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFaSHpySkVPT1Mu/anBn"
+    "picture": "https://imgs.search.brave.com/LSkzL5IKFJCifEUekF3xmRw0CwjORxy3jiexvq2Jkqw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFaSHpySkVPT1Mu/anBn",
+    "fecha_publicacion": "1943-04-06"
   },
   {
     "id_libro": 6,
@@ -57,7 +62,8 @@
     "publicacion": 1960,
     "genero": "Novela",
     "cantidad_disponible": 3,
-    "picture": "https://imgs.search.brave.com/Vux7xhGfqkmms-CodE1z1VGwtevt1aAg1jqL_VNB9fc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cmVzdW1lbmxpYnJv/LmNvbS9pbWcvbGli/cm9zL21hdGFyLWEt/dW4tcnVpc2Vub3Iu/anBn"
+    "picture": "https://imgs.search.brave.com/Vux7xhGfqkmms-CodE1z1VGwtevt1aAg1jqL_VNB9fc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cmVzdW1lbmxpYnJv/LmNvbS9pbWcvbGli/cm9zL21hdGFyLWEt/dW4tcnVpc2Vub3Iu/anBn",
+    "fecha_publicacion": "1960-07-11"
   },
   {
     "id_libro": 7,
@@ -67,7 +73,8 @@
     "publicacion": 1866,
     "genero": "Novela",
     "cantidad_disponible": 2,
-    "picture": "https://imgs.search.brave.com/46Tp70lCyo8DF-PRLL0awaE2XCXU5N2kc23jwxSWlRs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxWHEzTjhYQkJM/LmpwZw"
+    "picture": "https://imgs.search.brave.com/46Tp70lCyo8DF-PRLL0awaE2XCXU5N2kc23jwxSWlRs/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxWHEzTjhYQkJM/LmpwZw",
+    "fecha_publicacion": "1866-01-01"
   },
   {
     "id_libro": 8,
@@ -77,7 +84,8 @@
     "publicacion": 1985,
     "genero": "Novela",
     "cantidad_disponible": 4,
-    "picture": "https://imgs.search.brave.com/w3sj_6IYqa3P-80wjiscBrZXV50kYY3BIaMz3ktu4rY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/Lzcxbk9iUnFwa0NM/LmpwZw"
+    "picture": "https://imgs.search.brave.com/w3sj_6IYqa3P-80wjiscBrZXV50kYY3BIaMz3ktu4rY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/Lzcxbk9iUnFwa0NM/LmpwZw",
+    "fecha_publicacion": "1985-01-01"
   },
   {
     "id_libro": 9,
@@ -87,7 +95,8 @@
     "publicacion": 1813,
     "genero": "Romance",
     "cantidad_disponible": 5,
-    "picture": "https://imgs.search.brave.com/9ydpjMBMIaMXRdGB9EsxJzhNJ3bzdYgkjNUbqBhukOo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFHZDVlU0RGQ0wu/anBn"
+    "picture": "https://imgs.search.brave.com/9ydpjMBMIaMXRdGB9EsxJzhNJ3bzdYgkjNUbqBhukOo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFHZDVlU0RGQ0wu/anBn",
+    "fecha_publicacion": "1813-01-28"
   },
   {
     "id_libro": 10,
@@ -97,7 +106,8 @@
     "publicacion": 1937,
     "genero": "Fantasía",
     "cantidad_disponible": 4,
-    "picture": "https://imgs.search.brave.com/qV_UjgfOnJmSMyQrPftaJRykydQNlFKxFB7OUu9QtdE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/YWdhcGVhLmNvbS9C/b29rZXQvRWwtSG9i/Yml0LWk3bjY3OTAy/ODkuanBn"
+    "picture": "https://imgs.search.brave.com/qV_UjgfOnJmSMyQrPftaJRykydQNlFKxFB7OUu9QtdE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/YWdhcGVhLmNvbS9C/b29rZXQvRWwtSG9i/Yml0LWk3bjY3OTAy/ODkuanBn",
+    "fecha_publicacion": "1937-09-21"
   },
   {
     "id_libro": 11,
@@ -107,7 +117,8 @@
     "publicacion": 1913,
     "genero": "Novela",
     "cantidad_disponible": 2,
-    "picture": "https://imgs.search.brave.com/eX_qs0pJ9545uhWMFYAuD6cLRn2JWoAu9xsPfjuVnu4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/ZWxzb3Rhbm8uY29t/L2ltYWdlbmVzLzk3/ODg0OTEvOTc4ODQ5/MTA0NTIxLkpQRw"
+    "picture": "https://imgs.search.brave.com/eX_qs0pJ9545uhWMFYAuD6cLRn2JWoAu9xsPfjuVnu4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/ZWxzb3Rhbm8uY29t/L2ltYWdlbmVzLzk3/ODg0OTEvOTc4ODQ5/MTA0NTIxLkpQRw",
+    "fecha_publicacion": "1913-11-14"
   },
   {
     "id_libro": 12,
@@ -117,6 +128,7 @@
     "publicacion": 1922,
     "genero": "Modernismo",
     "cantidad_disponible": 3,
-    "picture": "https://imgs.search.brave.com/M31jdBxCLzv7q-3RWNTvAYufmVbpm3oUapBSOLENr0o/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXNzbDguY2FzYWRl/bGxpYnJvLmNvbS9h/L2wvczUvMTgvOTc4/ODQyNjQxODQxOC53/ZWJw"
+    "picture": "https://imgs.search.brave.com/M31jdBxCLzv7q-3RWNTvAYufmVbpm3oUapBSOLENr0o/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXNzbDguY2FzYWRl/bGxpYnJvLmNvbS9h/L2wvczUvMTgvOTc4/ODQyNjQxODQxOC53/ZWJw",
+    "fecha_publicacion": "1922-02-02"
   }
 ]

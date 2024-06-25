@@ -15,16 +15,38 @@
         <h1 class="books_title">Biblioteca "Python"</h1>
         <p>Hola, {{cliente.nombre}} {{cliente.apellido}}</p>
 
-        <form action="/libros" method="post">
-          <select name="tipo">
-            <option value="titulo">Titulo</option>
-            <option value="genero">Género</option>
-            <option value="autor">Autor</option>
-            <option value="editorial">Editorial</option>
+        <form class="filter" action="/libros" method="post">
+          <select class="select_filter" name="tipo">
+            <option class="option_filter" value="titulo">Titulo</option>
+            <option class="option_filter" value="genero">Género</option>
+            <option class="option_filter" value="autor">Autor</option>
+            <option class="option_filter" value="editorial">Editorial</option>
           </select>
-          <input type="text" name="texto" value="" placeholder="Buscar libro" />
-          <button>Buscar</button>
+          <input
+            class="input_filter"
+            type="text"
+            name="texto"
+            value=""
+            placeholder="Buscar libro"
+          />
+          <button class="button_filter">Buscar</button>
         </form>
+
+        <!-- ordenar por cantidad de libros disponibles o por fecha de publicación -->
+
+        <form class="order" action="/ordenar" method="post">
+          <label class="order_label">Ordenar por:</label>
+          <select class="select_order" name="ordenar">
+            <option hidden>Selecciona una opción</option>
+            <option class="option_order" value="cantidad">
+              Más disponibles
+            </option>
+            <option class="option_order" value="nuevos">Más nuevos</option>
+          </select>
+          <button class="button_order" type="submit">Ordenar</button>
+        </form>
+
+        <a href="/cerrar_sesion" class="button_logout">Cerrar sesión</a>
       </section>
       <div class="books_container">
         {% for libro in data %}
