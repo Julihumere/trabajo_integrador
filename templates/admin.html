@@ -23,9 +23,10 @@
       </section>
       <section class="reserva_section">
         <h2 class="reserva_section_title">Reserva</h2>
-        <form action="/reserva_exitosa" method="post" class="reserva_form">
+        <form action="/reservar" method="post" class="reserva_form">
           <input type="date" name="fecha" id="fecha" />
           <input type="hidden" name="id_libro" value="{{ id_libro }}" />
+          <input type="hidden" name="id_cliente" value="{{ id_cliente }}" />
           <section class="reserva_container_buttons">
             <button class="reserva_section_button" type="submit">Reservar</button>
             <button class="reserva_section_button_volver"><a  href="/libros" class="reserva_section_button">Volver al inicio</a></button>

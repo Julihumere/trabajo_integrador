@@ -1,1 +1,18 @@
-[{"email": "pedropicapiedras@gmail.com", "id": 1, "libro": "Don Quijote de la Mancha"}]
+[
+    {
+        "cliente_id": 9,
+        "estado_reserva": 2,
+        "fecha_devolucion": "2024-07-05",
+        "fecha_prestamo": "2024-06-25",
+        "libro_id": 1,
+        "reserva_id": 1
+    },
+    {
+        "cliente_id": 9,
+        "estado_reserva": 2,
+        "fecha_devolucion": "2024-07-04",
+        "fecha_prestamo": "2024-06-25",
+        "libro_id": 1,
+        "reserva_id": 2
+    }
+]

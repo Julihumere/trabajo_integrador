@@ -22,14 +22,11 @@
         <p>Este es el trabajo integrador de la materia Programación Web I</p>
       </section>
       <section class="reserva_section">
-        <h2 class="reserva_section_title">Reserva</h2>
-        <form action="/reserva_exitosa" method="post" class="reserva_form">
-          <input type="date" name="fecha" id="fecha" />
-          <input type="hidden" name="id_libro" value="{{ id_libro }}" />
-          <section class="reserva_container_buttons">
-            <button class="reserva_section_button" type="submit">Reservar</button>
-            <button class="reserva_section_button_volver"><a  href="/libros" class="reserva_section_button">Volver al inicio</a></button>
-          </section>
+        <h2 class="reserva_section_title">Devolucion exitosa</h2>
+        <p class="reserva_section_text">
+          ¡Tu devolucion ha sido realizada con éxito! Te esperamos en tu nueva reserva.
+        </p>
+        <a href="/libros" class="reserva_section_button">Volver al inicio</a>
       </section>
     </div>
   </body>
