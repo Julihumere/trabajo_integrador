@@ -75,6 +75,20 @@ def filtro_libros(tipo, texto):
         
         return libros_filtrados
 
+# Ordenar por cantidad de libros
+def ordenar_libros_cantidad():
+    with open('JSON/libros.json') as archivo_libros:
+        data = json.load(archivo_libros)
+        data.sort(key=lambda x: x['cantidad_disponible'], reverse=True)
+        print(data)
+        return data
+
+def ordenar_libros_publicacion():
+    with open('JSON/libros.json') as archivo_libros:
+        data = json.load(archivo_libros)
+        data.sort(key=lambda x: x['fecha_publicacion'], reverse=True)
+        return data
+
 def sumo_resto_cantidad_disponible(id_libro, es_resta):
     with open('JSON/libros.json', 'r') as archivo_libros:
         data = json.load(archivo_libros)
@@ -152,6 +166,12 @@ def obtener_reservas(email):
         return reservas
 
 
+def cerrar_sesion():
+    response = make_response(redirect(url_for('hello')))
+    response.set_cookie('email', '', expires=0)
+    return response
+
+
 ###############################################ROUTES############################################
 @app.route('/')
 def hello():
@@ -191,7 +211,7 @@ def funcion_registro():
     else:
         flash('Error en el registro.')
         return redirect(url_for('registro_template'))
-     
+
 
 #Pantalla de Libros
 @app.route('/libros')
@@ -209,8 +229,7 @@ def libros_template():
     else:
         response = make_response(redirect(url_for('hello')))
         return response
-
-     
+  
 @app.route('/libros', methods=['POST'])
 def filtro_libros_template():
     email = request.cookies.get('email')
@@ -220,6 +239,26 @@ def filtro_libros_template():
     texto = str(request.form['texto'])
     data = filtro_libros(tipo, texto)
     return render_template('libros.html', data=data, cliente=data_cliente)
+
+# Ordenar por cantidad de libros
+@app.route('/ordenar', methods=['POST'])
+def ordenar_template():
+    orden = request.form['ordenar']
+    print(f"orden: {orden}")
+    email = request.cookies.get('email')
+    data_cliente = cliente(email)
+    data = []
+    if(orden == 'cantidad'):
+        data = ordenar_libros_cantidad()
+    else:
+        data = ordenar_libros_publicacion()
+    return render_template('libros.html', data=data, cliente=data_cliente)
+
+
+# Cerrar sesion
+@app.route('/cerrar_sesion')
+def cerrar_sesion_template():
+    return cerrar_sesion()
 
 @app.route('/reserva_libro', methods=['POST'])
 def reserva_template():
