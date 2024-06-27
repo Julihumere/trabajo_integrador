@@ -1,78 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/styles.css') }}"
-    />
-    <title>Biblioteca "Python"</title>
-  </head>
-  <body>
-    <div class="home_container">
-      <section class="books_header">
-        <h1 class="books_title">Biblioteca "Python"</h1>
-        <p>Hola, {{cliente.nombre}} {{cliente.apellido}}</p>
+<html lang="es">
 
-        <form class="filter" action="/libros" method="post">
-          <select class="select_filter" name="tipo">
-            <option class="option_filter" value="titulo">Titulo</option>
-            <option class="option_filter" value="genero">Género</option>
-            <option class="option_filter" value="autor">Autor</option>
-            <option class="option_filter" value="editorial">Editorial</option>
-          </select>
-          <input
-            class="input_filter"
-            type="text"
-            name="texto"
-            value=""
-            placeholder="Buscar libro"
-          />
-          <button class="button_filter">Buscar</button>
-        </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  <title>Biblioteca "Python"</title>
+</head>
 
-        <!-- ordenar por cantidad de libros disponibles o por fecha de publicación -->
+<body>
+  <div class="home_container">
+    <section class="books_header">
+      <h1 class="books_title">Biblioteca "Python"</h1>
+      <p>Hola, {{cliente.nombre}} {{cliente.apellido}}</p>
 
-        <form class="order" action="/ordenar" method="post">
-          <label class="order_label">Ordenar por:</label>
-          <select class="select_order" name="ordenar">
-            <option hidden>Selecciona una opción</option>
-            <option class="option_order" value="cantidad">
-              Más disponibles
-            </option>
-            <option class="option_order" value="nuevos">Más nuevos</option>
-          </select>
-          <button class="button_order" type="submit">Ordenar</button>
-        </form>
+      <form class="filter" action="/libros" method="post">
+        <select class="select_filter" name="tipo">
+          <option class="option_filter" value="titulo">Titulo</option>
+          <option class="option_filter" value="genero">Género</option>
+          <option class="option_filter" value="autor">Autor</option>
+          <option class="option_filter" value="editorial">Editorial</option>
+        </select>
+        <input
+          class="input_filter"
+          type="text"
+          name="texto"
+          value=""
+          placeholder="Buscar libro"
+        />
+        <button class="button_filter">Buscar</button>
+      </form>
 
-        <a href="/cerrar_sesion" class="button_logout">Cerrar sesión</a>
-      </section>
-      <div class="books_container">
-        {% for libro in data %}
-        <form class="book" action="/reserva_libro" method="post">
-          <section>
-            <h1 class="book_title">{{ libro.titulo }}</h1>
-            <h5 class="book_info"><span>Autor:</span> {{ libro.autor }}</h5>
-            <h5 class="book_info">
-              <span>Editorial:</span> {{ libro.editorial }}
-            </h5>
-            <h5 class="book_info"><span>Año:</span> {{ libro.publicacion }}</h5>
-            <h5 class="book_info">
-              Cantidad disponibles: {{libro.cantidad_disponible}}
-            </h5>
-            <button class="book_button" type="submit">Reservar</button>
-          </section>
-          <img
-            class="book_picture"
-            src="{{ libro.picture }}"
-            alt="{{ libro.titulo }}"
-          />
-          <input type="hidden" name="id_libro" value="{{ libro.id }}" />
-          <input type="hidden" name="id_cliente" value="{{ cliente.id }}" />
-        </form>
-        {% endfor %}
-      </div>
+      <!-- ordenar por cantidad de libros disponibles o por fecha de publicación -->
+
+      <form class="order" action="/ordenar" method="post">
+        <label class="order_label">Ordenar por:</label>
+        <select class="select_order" name="ordenar">
+          <option hidden>Selecciona una opción</option>
+          <option class="option_order" value="cantidad">
+            Más disponibles
+          </option>
+          <option class="option_order" value="nuevos">Más nuevos</option>
+        </select>
+        <button class="button_order" type="submit">Ordenar</button>
+      </form>
+
+      <a href="/cerrar_sesion" class="button_logout">Cerrar sesión</a>
+    </section>
+    <div class="books_container">
+      {% for libro in data %}
+      <form class="book" action="{% if libro.es_cliente_reservado %}/devolucion_exitosa{% else %}/reserva_libro{% endif %}" method="post">
+        <section>
+          <h1 class="book_title">{{ libro.titulo }}</h1>
+          <h5 class="book_info"><span>Autor:</span> {{ libro.autor }}</h5>
+          <h5 class="book_info">
+            <span>Editorial:</span> {{ libro.editorial }}
+          </h5>
+          <h5 class="book_info"><span>Año:</span> {{ libro.publicacion }}</h5>
+          <h5 class="book_info">
+            Cantidad disponibles: {{libro.cantidad_disponible}}
+          </h5>
+          {% if libro.es_cliente_reservado %}
+          <button class="book_button" type="submit">Devolver</button>
+          {% elif libro.cantidad_disponible > 0 %}
+          <button class="book_button" type="submit">Reservar</button>
+          {% else %}
+          <button class="book_button" type="button" disabled>AGOTADO</button>
+          {% endif %}
+        </section>
+        <img class="book_picture" src="{{ libro.picture }}" alt="{{ libro.titulo }}" />
+        <input type="hidden" name="id_libro" value="{{ libro.id_libro }}" />
+        <input type="hidden" name="id_cliente" value="{{ cliente.id }}" />
+      </form>
+      {% endfor %}
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

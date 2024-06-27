@@ -1,3 +1,4 @@
+from datetime import datetime
 from flask import Flask, flash, json, redirect, render_template, request, url_for, make_response
 
 
@@ -88,19 +89,71 @@ def ordenar_libros_publicacion():
         data.sort(key=lambda x: x['fecha_publicacion'], reverse=True)
         return data
 
+def sumo_resto_cantidad_disponible(id_libro, es_resta):
+    with open('JSON/libros.json', 'r') as archivo_libros:
+        data = json.load(archivo_libros)
+
+    for libro in data:
+        if libro['id_libro'] == id_libro:
+            if es_resta:
+                libro['cantidad_disponible'] -= 1
+            else:
+                libro['cantidad_disponible'] += 1
+            break
+
+    with open('JSON/libros.json', 'w') as archivo_libros:
+        json.dump(data, archivo_libros, indent=4)
+
+def hay_disponible(id_libro):
+    with open('JSON/libros.json') as archivo_libros:
+        data = json.load(archivo_libros)
+
+    for libro in data:
+        if libro['id_libro'] == id_libro:
+            return libro['cantidad_disponible'] > 0
+    return False
+
 # Reserva de libros
-def reservar(libro):
-    email = request.cookies.get('email')
+def reservar(id_cliente, id_libro, fecha_prestamo, fecha_devolucion, estado_reserva):
     with open('JSON/reservas.json') as archivo_reservas:
         data = json.load(archivo_reservas)
         data.append({
-            'id': len(data) + 1,
-            'email': email,
-            'libro': libro
+            'reserva_id': len(data) + 1,
+            'cliente_id': id_cliente,
+            'libro_id': id_libro,
+            'fecha_prestamo': fecha_prestamo,
+            'fecha_devolucion': fecha_devolucion,
+            'estado_reserva' : estado_reserva
         })
+
+    sumo_resto_cantidad_disponible(id_libro, True)
+
     with open('JSON/reservas.json', 'w') as archivo_reservas:
         json.dump(data, archivo_reservas)
         return True
+
+def es_libro_reservado_por_cliente(id_libro, id_cliente):
+    libros_reservados = []
+
+    with open('JSON/reservas.json') as archivo_reservas:
+        reservas = json.load(archivo_reservas)
+        for reserva in reservas:
+            if reserva['cliente_id'] == id_cliente and reserva['estado_reserva'] == 1:
+                libros_reservados.append(reserva['libro_id'])
+
+    return id_libro in libros_reservados
+
+def cambiar_estado_reserva(id_libro, id_cliente):
+    with open('JSON/reservas.json') as archivo_reservas:
+        reservas = json.load(archivo_reservas)
+        for reserva in reservas:
+            if (reserva['cliente_id'] == id_cliente and
+                reserva['libro_id'] == id_libro and 
+                reserva['estado_reserva'] == 1):
+                reserva["estado_reserva"] = 2
+                break 
+    with open('JSON/reservas.json', 'w') as archivo_reservas:
+        json.dump(reservas, archivo_reservas, indent=4)
 
 # Obtener reservas
 def obtener_reservas(email):
@@ -118,7 +171,13 @@ def cerrar_sesion():
     response.set_cookie('email', '', expires=0)
     return response
 
+def cerrar_sesion():
+    response = make_response(redirect(url_for('hello')))
+    response.set_cookie('email', '', expires=0)
+    return response
 
+
+###############################################ROUTES############################################
 @app.route('/')
 def hello():
     return render_template('index.html')
@@ -158,15 +217,15 @@ def funcion_registro():
         flash('Error en el registro.')
         return redirect(url_for('registro_template'))
 
-
 #Pantalla de Libros
 @app.route('/libros')
 def libros_template():
-    email = request.cookies.get('email')
-    data_cliente = cliente(email)
+    session = request.cookies.get('email')
+    data_cliente = cliente(session)
     data=libros()
 
-    session = request.cookies.get('email')
+    for libro in data:
+        libro['es_cliente_reservado'] = es_libro_reservado_por_cliente(libro['id_libro'], data_cliente['id'])
 
     if session:
         response = make_response(render_template('libros.html', data=data, cliente=data_cliente))
@@ -174,6 +233,7 @@ def libros_template():
     else:
         response = make_response(redirect(url_for('hello')))
         return response
+  
   
 @app.route('/libros', methods=['POST'])
 def filtro_libros_template():
@@ -208,11 +268,47 @@ def cerrar_sesion_template():
 @app.route('/reserva_libro', methods=['POST'])
 def reserva_template():
     id_libro = str(request.form['id_libro'])
-    id_cliente = str(request.form['id_cliente'])
+    email_cliente = request.cookies.get('email')
+    data_cliente = cliente(email_cliente)
+    return render_template('reservar.html', cliente=data_cliente, id_libro=id_libro)
+
+@app.route('/reserva_exitosa', methods=['POST'])
+def reserva_exitosa_template():
+    data_cliente = cliente(request.cookies.get('email'))
+    id_cliente = data_cliente['id']
+    id_libro = int(request.form['id_libro'])
+    fecha_prestamo = datetime.now().strftime("%Y-%m-%d")
+    fecha_devolucion = str(request.form['fecha'])
+    estado_reserva = 1
+
+    if hay_disponible(id_libro) and reservar(id_cliente, id_libro, fecha_prestamo, fecha_devolucion, estado_reserva):
+        return render_template('reserva_exitosa.html', fecha=fecha_devolucion)
+    
+@app.route('/devolucion_exitosa', methods=['POST'])
+def devolucion_exitosa_template():
+    data_cliente = cliente(request.cookies.get('email'))
+    id_cliente = data_cliente['id']
+    id_libro = int(request.form['id_libro'])
+
+    sumo_resto_cantidad_disponible(id_libro, False)
+    cambiar_estado_reserva(id_libro, id_cliente)
+
+    return render_template('devolucion_exitosa.html')
+
+@app.route('/admin')
+def admin_template():
     email = request.cookies.get('email')
     data_cliente = cliente(email)
-    return render_template('reservar.html', cliente=data_cliente, id_libro=id_libro, id_cliente=id_cliente)
+    data=libros()
 
+    session = request.cookies.get('email')
+
+    if session:
+        response = make_response(render_template('libros.html', data=data, cliente=data_cliente))
+        return response
+    else:
+        response = make_response(redirect(url_for('hello')))
+        return response
 
 
 if __name__ == '__main__':
