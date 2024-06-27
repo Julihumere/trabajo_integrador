@@ -217,8 +217,6 @@ def funcion_registro():
         flash('Error en el registro.')
         return redirect(url_for('registro_template'))
 
-
-
 #Pantalla de Libros
 @app.route('/libros')
 def libros_template():
@@ -246,26 +244,6 @@ def filtro_libros_template():
     texto = str(request.form['texto'])
     data = filtro_libros(tipo, texto)
     return render_template('libros.html', data=data, cliente=data_cliente)
-
-# Ordenar por cantidad de libros
-@app.route('/ordenar', methods=['POST'])
-def ordenar_template():
-    orden = request.form['ordenar']
-    print(f"orden: {orden}")
-    email = request.cookies.get('email')
-    data_cliente = cliente(email)
-    data = []
-    if(orden == 'cantidad'):
-        data = ordenar_libros_cantidad()
-    else:
-        data = ordenar_libros_publicacion()
-    return render_template('libros.html', data=data, cliente=data_cliente)
-
-
-# Cerrar sesion
-@app.route('/cerrar_sesion')
-def cerrar_sesion_template():
-    return cerrar_sesion()
 
 # Ordenar por cantidad de libros
 @app.route('/ordenar', methods=['POST'])
