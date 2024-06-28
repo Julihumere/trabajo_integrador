@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='img/favicon.webp') }}"
+      type="image/webp"
+    />
+    <title>Biblioteca "Python"</title>
+  </head>
+  <body>
+    <div class="register_container">
+      <section class="register_header">
+        <h1 class="register_title">Biblioteca "Python"</h1>
+        <p>Este es el trabajo integrador de la materia Programación Web I</p>
+      </section>
+      <form class="order" action="/seccion_libros" method="get">
+        <button class="book_buttons_admin" style="margin-top: 100px;" type="submit">Seccion Libros</button>
+      </form>
+      <form action="/crear_editar_libro" method="post" class="libro_edicion_registro_section">
+        <label class="register_box_label_books"
+          >Autor
+          <input
+            class="register_box_input"
+            type="text"
+            name="autor"
+            value={{ libro.autor }}
+        /></label>
+        <label class="register_box_label_books"
+          >Titulo
+          <input
+            class="register_box_input"
+            type="text"
+            name="titulo"
+            value={{ libro.titulo }}
+        /></label>
+        <label class="register_box_label_books"
+          >Año Publicacion
+          <input
+            class="register_box_input"
+            type="number"
+            name="publicacion"
+            value={{ libro.publicacion }}
+        /></label>
+        <label class="register_box_label_books"
+          >Editorial
+          <input
+            class="register_box_input"
+            type="text"
+            name="editorial"
+            value={{ libro.editorial }}
+        /></label>
+        <label class="register_box_label_books"
+          >Cantidad Disponible
+          <input
+            class="register_box_input"
+            type="number"
+            name="cantidad_disponible"
+            value={{ libro.cantidad_disponible }}
+        /></label>
+        <label class="register_box_label_books"
+          >Fecha Publicacion
+          <input
+            class="register_box_input"
+            type="text"
+            name="fecha_publicacion"
+            value={{ libro.fecha_publicacion }}
+        /></label>
+        <label class="register_box_label_books"
+          >Genero
+          <input
+            class="register_box_input"
+            type="text"
+            name="genero"
+            value={{ libro.genero }}
+        /></label>
+        <label class="register_box_label_books"
+        >Url Imagen
+        <input
+          class="register_box_input"
+          type="text"
+          name="picture"
+          value={{ libro.picture }}
+        /></label>
+        <input type="hidden" name="id_libro" value={{ libro.id_libro }} />
+        <aside class="register_box_container_button">
+          <button class="register_box_button">Editar Libro</button>
+        </aside>
+      </form>
+    </div>
+  </body>
+</html>

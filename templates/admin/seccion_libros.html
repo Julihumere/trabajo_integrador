@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  <title>Biblioteca "Python"</title>
+</head>
+
+<body>
+  <div class="home_container">
+    <section class="books_header">
+      <h1 class="books_title">Biblioteca "Python"</h1>
+      
+      <form class="order" action="/admin_libros?accion=crear" method="get">
+        <button class="book_buttons_admin" type="submit">+ Nuevo Libro</button>
+      </form>
+
+      <a href="/admin" class="button_logout">Volver a Reportes</a>
+    </section>
+    <div class="books_container">
+      {% for libro in data %}
+      <form class="book" action="/admin_libros" method="post">
+        <section>
+          <h1 class="book_title">{{ libro.titulo }}</h1>
+          <h5 class="book_info"><span>Autor:</span> {{ libro.autor }}</h5>
+          <h5 class="book_info">
+            <span>Editorial:</span> {{ libro.editorial }}
+          </h5>
+          <h5 class="book_info"><span>Año:</span> {{ libro.publicacion }}</h5>
+          <h5 class="book_info">
+            Cantidad disponibles: {{libro.cantidad_disponible}}
+          </h5>
+          <a href="/admin_libros?accion=editar&libro_id={{ libro.id_libro }}" class="book_buttons_admin">Editar</a>
+          <a href="/admin_libros?accion=eliminar&libro_id={{ libro.id_libro }}" class="book_buttons_admin">Eliminar</a>
+        </section>
+        <img class="book_picture" src="{{ libro.picture }}" alt="{{ libro.titulo }}" />
+      </form>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+
+</html>

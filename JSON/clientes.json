@@ -54,7 +54,7 @@
         "direccion": "Piedrita 1234",
         "documento": "3423424242424",
         "email": "pedropicapiedras@gmail.com",
-        "id": 6,
+        "id_cliente": 6,
         "nombre": "Pedro",
         "password": "Pedro1234",
         "telefono": "342424242"
@@ -64,7 +64,7 @@
         "direccion": "1",
         "documento": "1",
         "email": "admin@biblioteca.com",
-        "id": 7,
+        "id_cliente": 7,
         "nombre": "admin",
         "password": "admin",
         "telefono": "1"
@@ -74,19 +74,9 @@
         "direccion": "Piedrita 1234",
         "documento": "343242423423",
         "email": "lautaro@gmail.com",
-        "id": 8,
-        "nombre": "Lautaron",
-        "password": "Test1234",
+        "id_cliente": 8,
+        "nombre": "Lautaro",
+        "password": "",
         "telefono": "343242423424"
-    },
-    {
-        "apellido": "lolo",
-        "direccion": "cacac",
-        "documento": "404093385",
-        "email": "lauta@cucux.com",
-        "id": 9,
-        "nombre": "lauta",
-        "password": "123123123",
-        "telefono": "3216546516"
     }
 ]
