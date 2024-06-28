@@ -5,6 +5,8 @@ from flask import Flask, flash, json, redirect, render_template, request, url_fo
 
 app = Flask(__name__)
 
+app.secret_key = '332432fsdfsdsdfs'
+
 @app.route('/')
 def hello():
     return render_template('index.html')
@@ -197,6 +199,20 @@ def admin_libros():
             return render_template('admin/registro_libro.html')
     else:
         return make_response(render_template('admin/acceso_restringido.html'))
+
+@app.route('/admin_usuarios')
+def admin_usuarios():
+    email = request.cookies.get('email')
+
+    if email == "admin@biblioteca.com":
+        accion = request.args.get('accion')
+        id_cliente = request.args.get('id_cliente')
+
+        if accion == 'eliminar':
+            eliminar_usuario(int(id_cliente))
+            return render_template('admin/satisfactorio.html', accion="eliminacion", tipo="usuario")
+        else:
+            return render_template('admin/registro_usuario.html')
     
 @app.route('/crear_editar_libro', methods=['POST'])
 def crear_editar_libro():

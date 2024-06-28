@@ -552,3 +552,15 @@ tr:nth-child(even) {
   align-items: center;
   flex-direction: column;
 }
+
+.container_eliminar_usuario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_eliminar_usuario {
+  background-color: red;
+  padding: 10px;
+  border: none;
+}

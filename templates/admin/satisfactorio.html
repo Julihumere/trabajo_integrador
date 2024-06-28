@@ -26,7 +26,13 @@
         <p class="reserva_section_text">
           ¡Tu {{ accion }} ha sido realizada con éxito!
         </p>
-        <a href="/seccion_libros" class="reserva_section_button">Volver a seccion Libros</a>
+        <a
+          href="{% if tipo == 'usuario' %}/seccion_usuarios{% else %}/seccion_libros{%
+          endif %}"
+          class="reserva_section_button"
+          >Volver a seccion {% if tipo == 'usuario' %}usuarios{% else %}libros{%
+          endif %}</a
+        >
       </section>
     </div>
   </body>

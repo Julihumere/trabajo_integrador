@@ -1,11 +1,17 @@
 from flask import json, redirect, url_for, make_response
 
+
 # Registro de clientes
 def registro(nombre, apellido, documento, direccion, telefono, email, password):
     with open('JSON/clientes.json', encoding='utf-8') as archivo_clientes:
         data = json.load(archivo_clientes)
+        for cliente in data:
+            id_nuevo = 0
+            if cliente['id_cliente'] > id_nuevo:
+                id_nuevo = cliente['id_cliente'] 
+
         data.append({
-            'id_cliente': len(data) + 1,
+            'id_cliente': id_nuevo + 1,
             'nombre': nombre,
             'apellido': apellido,
             'documento': documento,
@@ -73,7 +79,6 @@ def filtro_libros(tipo, texto):
         data = json.load(archivo_libros)
         libros_filtrados = []
 
-        print(f"tipo: {tipo}, texto: {texto}")
 
         select = tipo.lower()
         
@@ -192,9 +197,16 @@ def cerrar_sesion():
 def registro_edicion_libro(autor, cantidad_disponible, editorial, fecha_publicacion, genero, picture, publicacion, titulo, id_libro=None):
     with open('JSON/libros.json',encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
+
         if id_libro is None:
+
+            for libro in data:
+                id_nuevo = 0
+                if cliente['id_libro'] > id_nuevo:
+                    id_nuevo = cliente['id_libro']
+
             data.append({
-            "id_libro": len(data) + 1,
+            "id_libro": id_nuevo + 1,
             "autor": autor,
             "cantidad_disponible": cantidad_disponible,
             "editorial": editorial,
@@ -232,3 +244,17 @@ def eliminar_libro(id_libro):
     with open('JSON/libros.json', 'w', encoding='utf-8') as archivo_libros:
         json.dump(nuevos_libros, archivo_libros, indent=4)
         return True
+
+def eliminar_usuario(id_cliente):
+    with open('JSON/clientes.json', encoding='utf-8') as archivo_clientes:
+        data = json.load(archivo_clientes)
+        nuevos_clientes = []
+        for cliente in data:
+            if cliente['id_cliente'] != id_cliente:
+                nuevos_clientes.append(cliente)
+
+    with open('JSON/clientes.json', 'w', encoding='utf-8') as archivo_clientes:
+        json.dump(nuevos_clientes, archivo_clientes, indent=4)
+        return True    
+
+    

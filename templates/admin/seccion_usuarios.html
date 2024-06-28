@@ -28,6 +28,7 @@
               <th>Email</th>
               <th>Dirección</th>
               <th>Telefono</th>
+              <th>Eliminar</th>
             </tr>
           </thead>
           <tbody>
@@ -37,8 +38,17 @@
               <td>{{ usuario.nombre }}</td>
               <td>{{ usuario.apellido }}</td>
               <td>{{ usuario.email }}</td>
-              <td>{{ usuario.fecha_direccionprestamo }}</td>
+              <td>{{ usuario.direccion }}</td>
               <td>{{ usuario.telefono}}</td>
+              <td class="container_eliminar_usuario">
+                <button class="button_eliminar_usuario">
+                  <a
+                    href="/admin_usuarios?accion=eliminar&id_cliente={{ usuario.id_cliente }}"
+                    style="text-decoration: none; color: white"
+                    >Eliminar</a
+                  >
+                </button>
+              </td>
             </tr>
             {% endfor %}
           </tbody>
