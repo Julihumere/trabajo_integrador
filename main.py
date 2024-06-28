@@ -131,7 +131,8 @@ def admin():
     email = request.cookies.get('email')
 
     if email == "admin@biblioteca.com":
-
+        reservas_por_libro = []
+        reservas_por_cliente = []
         all_reservas = reservas()
         for reserva in all_reservas:
             data_cliente = cliente(None, reserva["cliente_id"])
@@ -141,7 +142,17 @@ def admin():
             reserva["cantidad_disponible"] = data_libro["cantidad_disponible"]
             reserva["cliente_nombre"] = data_cliente["nombre"] + " " + data_cliente["apellido"]
 
-        response = make_response(render_template('admin/reportes.html', reservas = all_reservas))
+            """ if reservas_por_libro == []:
+
+                for libro_report in reservas_por_libro:
+                    if data_cliente["id_cliente"] == libro_report["id_cliente"]:
+                        if reserva["estado_reserva"] == 1:
+                            libro_report["prestados"] += 1
+                        else:
+                            libro_report["prestados"] += 1
+                            libro_report["devueltos"] += 1 """
+
+        response = make_response(render_template('admin/reportes.html', reservas = all_reservas ))
         return response
     else:
         response = make_response(render_template('admin/acceso_restringido.html'))
