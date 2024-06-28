@@ -16,6 +16,7 @@ def funcion_login():
     password = str(request.form['password'])
 
     if login(email, password):
+
         if email == "admin@biblioteca.com":
             response = make_response(redirect(url_for('admin')))
         else:
@@ -56,6 +57,7 @@ def libros_template():
 
     for libro in data:
         libro['es_cliente_reservado'] = es_libro_reservado_por_cliente(libro['id_libro'], data_cliente['id_cliente'])
+
 
     if session:
         response = make_response(render_template('libros.html', data=data, cliente=data_cliente))
@@ -172,6 +174,7 @@ def seccion_usuarios():
 
     if email == "admin@biblioteca.com":
         data_usuarios = usuarios()
+        print(data_usuarios)
         return make_response(render_template('admin/seccion_usuarios.html', data = data_usuarios))
     else:
         return make_response(render_template('admin/acceso_restringido.html'))

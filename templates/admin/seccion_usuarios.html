@@ -15,45 +15,35 @@
       <section class="books_header">
         <h1 class="books_title">Biblioteca "Python"</h1>
 
-        <form class="order" action="/admin_libros?accion=crear" method="get">
-          <button class="book_buttons_admin" type="submit">
-            + Nuevo Libro
-          </button>
-        </form>
-
         <a href="/admin" class="button_logout">Volver a Reportes</a>
       </section>
-      <table>
-        <thead>
-          <tr>
-            <th>ID Reserva</th>
-            <th>Nombre Cliente</th>
-            <th>Nombre Libro</th>
-            <th>Libros restantes</th>
-            <th>Estado</th>
-            <th>Fecha Reserva</th>
-            <th>Fecha Devolución</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for usuario in usuarios %}
-          <tr>
-            <td>{{ reserva.reserva_id }}</td>
-            <td>{{ reserva.cliente_nombre }}</td>
-            <td>{{ reserva.libro_nombre }}</td>
-            <td>{{ reserva.cantidad_disponible }}</td>
-            <td>
-              {{ "Prestado" if reserva.estado_reserva == 1 else "Devuelto" }}
-            </td>
-            <td>{{ reserva.fecha_prestamo }}</td>
-            <td>
-              {{ reserva.fecha_devolucion if reserva.estado_reserva == 1 else
-              "Devuelto" }}
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+      <div class="table_container">
+        <h1>Usuarios</h1>
+        <table class="table_usuarios">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Email</th>
+              <th>Dirección</th>
+              <th>Telefono</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for usuario in data %}
+            <tr>
+              <td>{{ usuario.id_cliente }}</td>
+              <td>{{ usuario.nombre }}</td>
+              <td>{{ usuario.apellido }}</td>
+              <td>{{ usuario.email }}</td>
+              <td>{{ usuario.fecha_direccionprestamo }}</td>
+              <td>{{ usuario.telefono}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>

@@ -2,7 +2,7 @@ from flask import json, redirect, url_for, make_response
 
 # Registro de clientes
 def registro(nombre, apellido, documento, direccion, telefono, email, password):
-    with open('JSON/clientes.json') as archivo_clientes:
+    with open('JSON/clientes.json', encoding='utf-8') as archivo_clientes:
         data = json.load(archivo_clientes)
         data.append({
             'id_cliente': len(data) + 1,
@@ -14,13 +14,13 @@ def registro(nombre, apellido, documento, direccion, telefono, email, password):
             'email': email,
             'password': password
         })
-    with open('JSON/clientes.json', 'w') as archivo_clientes:
+    with open('JSON/clientes.json', 'w', encoding='utf-8') as archivo_clientes:
         json.dump(data, archivo_clientes)
         return True
 
 # Logueo de clientes
 def login(email, password):
-    with open('JSON/clientes.json') as archivo_clientes:
+    with open('JSON/clientes.json', encoding='utf-8') as archivo_clientes:
         data = json.load(archivo_clientes)
         for cliente in data:
             if cliente['email'] == email and cliente['password'] == password:
@@ -29,7 +29,7 @@ def login(email, password):
 
 # Obtener los libros
 def libros(libro_id=None):
-    with open('JSON/libros.json') as archivo_libros:
+    with open('JSON/libros.json', encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
         if libro_id is not None:
             for libro in data:
@@ -41,13 +41,13 @@ def libros(libro_id=None):
         
 # Obtener los usuarios
 def usuarios():
-    with open('JSON/clientes.json') as archivo_clientes:
+    with open('JSON/clientes.json', encoding='utf-8') as archivo_clientes:
         data = json.load(archivo_clientes)
         return data
 
 # Obtener datos del cliente
 def cliente(email, cliente_id=None):
-    with open('JSON/clientes.json') as archivo_clientes:
+    with open('JSON/clientes.json', encoding='utf-8') as archivo_clientes:
         data = json.load(archivo_clientes)
         if email is not None:
             for cliente in data:
@@ -63,13 +63,13 @@ def cliente(email, cliente_id=None):
             return data
 
 def reservas():
-    with open('JSON/reservas.json') as archivo_libros:
+    with open('JSON/reservas.json', encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
         return data
 
 # Filtro de libros
 def filtro_libros(tipo, texto):
-    with open('JSON/libros.json') as archivo_libros:
+    with open('JSON/libros.json', encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
         libros_filtrados = []
 
@@ -96,20 +96,20 @@ def filtro_libros(tipo, texto):
 
 # Ordenar por cantidad de libros
 def ordenar_libros_cantidad():
-    with open('JSON/libros.json') as archivo_libros:
+    with open('JSON/libros.json', encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
         data.sort(key=lambda x: x['cantidad_disponible'], reverse=True)
         print(data)
         return data
 
 def ordenar_libros_publicacion():
-    with open('JSON/libros.json') as archivo_libros:
+    with open('JSON/libros.json', encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
         data.sort(key=lambda x: x['fecha_publicacion'], reverse=True)
         return data
 
 def sumo_resto_cantidad_disponible(id_libro, es_resta):
-    with open('JSON/libros.json', 'r') as archivo_libros:
+    with open('JSON/libros.json', 'r', encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
 
     for libro in data:
@@ -120,11 +120,11 @@ def sumo_resto_cantidad_disponible(id_libro, es_resta):
                 libro['cantidad_disponible'] += 1
             break
 
-    with open('JSON/libros.json', 'w') as archivo_libros:
+    with open('JSON/libros.json', 'w', encoding='utf-8') as archivo_libros:
         json.dump(data, archivo_libros, indent=4)
 
 def hay_disponible(id_libro):
-    with open('JSON/libros.json') as archivo_libros:
+    with open('JSON/libros.json', encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
 
     for libro in data:
@@ -134,7 +134,7 @@ def hay_disponible(id_libro):
 
 # Reserva de libros
 def reservar(id_cliente, id_libro, fecha_prestamo, fecha_devolucion, estado_reserva):
-    with open('JSON/reservas.json') as archivo_reservas:
+    with open('JSON/reservas.json', encoding='utf-8') as archivo_reservas:
         data = json.load(archivo_reservas)
         data.append({
             'reserva_id': len(data) + 1,
@@ -147,14 +147,14 @@ def reservar(id_cliente, id_libro, fecha_prestamo, fecha_devolucion, estado_rese
 
     sumo_resto_cantidad_disponible(id_libro, True)
 
-    with open('JSON/reservas.json', 'w') as archivo_reservas:
+    with open('JSON/reservas.json', 'w', encoding='utf-8') as archivo_reservas:
         json.dump(data, archivo_reservas)
         return True
 
 def es_libro_reservado_por_cliente(id_libro, id_cliente):
     libros_reservados = []
 
-    with open('JSON/reservas.json') as archivo_reservas:
+    with open('JSON/reservas.json', encoding='utf-8') as archivo_reservas:
         reservas = json.load(archivo_reservas)
         for reserva in reservas:
             if reserva['cliente_id'] == id_cliente and reserva['estado_reserva'] == 1:
@@ -163,7 +163,7 @@ def es_libro_reservado_por_cliente(id_libro, id_cliente):
     return id_libro in libros_reservados
 
 def cambiar_estado_reserva(id_libro, id_cliente):
-    with open('JSON/reservas.json') as archivo_reservas:
+    with open('JSON/reservas.json', encoding='utf-8') as archivo_reservas:
         reservas = json.load(archivo_reservas)
         for reserva in reservas:
             if (reserva['cliente_id'] == id_cliente and
@@ -171,12 +171,12 @@ def cambiar_estado_reserva(id_libro, id_cliente):
                 reserva['estado_reserva'] == 1):
                 reserva["estado_reserva"] = 2
                 break 
-    with open('JSON/reservas.json', 'w') as archivo_reservas:
+    with open('JSON/reservas.json', 'w', encoding='utf-8') as archivo_reservas:
         json.dump(reservas, archivo_reservas, indent=4)
 
 # Obtener reservas
 def obtener_reservas(email):
-    with open('JSON/reservas.json') as archivo_reservas:
+    with open('JSON/reservas.json', encoding='utf-8') as archivo_reservas:
         data = json.load(archivo_reservas)
         reservas = []
         for reserva in data:
@@ -190,7 +190,7 @@ def cerrar_sesion():
     return response
 
 def registro_edicion_libro(autor, cantidad_disponible, editorial, fecha_publicacion, genero, picture, publicacion, titulo, id_libro=None):
-    with open('JSON/libros.json') as archivo_libros:
+    with open('JSON/libros.json',encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
         if id_libro is None:
             data.append({
@@ -217,18 +217,18 @@ def registro_edicion_libro(autor, cantidad_disponible, editorial, fecha_publicac
                     libro['titulo'] = titulo
                     break
     
-        with open('JSON/libros.json', 'w') as archivo_libros:
-            json.dump(data, archivo_libros)
+        with open('JSON/libros.json', 'w', encoding='utf-8') as archivo_libros:
+            json.dump(data, archivo_libros,ensure_ascii=False, indent=4)
             return True
     
 def eliminar_libro(id_libro):
-    with open('JSON/libros.json') as archivo_libros:
+    with open('JSON/libros.json', encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
         nuevos_libros = []
         for libro in data:
             if libro['id_libro'] != id_libro:
                 nuevos_libros.append(libro)
 
-    with open('JSON/libros.json', 'w') as archivo_libros:
+    with open('JSON/libros.json', 'w', encoding='utf-8') as archivo_libros:
         json.dump(nuevos_libros, archivo_libros, indent=4)
         return True
