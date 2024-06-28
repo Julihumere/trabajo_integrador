@@ -5,8 +5,6 @@ from flask import Flask, flash, json, redirect, render_template, request, url_fo
 
 app = Flask(__name__)
 
-app.secret_key = '332432fsdfsdsdfs'
-
 @app.route('/')
 def hello():
     return render_template('index.html')
@@ -154,6 +152,16 @@ def seccion_libros():
     if email == "admin@biblioteca.com":
         data_libros = libros()
         return make_response(render_template('admin/seccion_libros.html', data = data_libros))
+    else:
+        return make_response(render_template('admin/acceso_restringido.html'))
+    
+@app.route('/seccion_usuarios')
+def seccion_usuarios():
+    email = request.cookies.get('email')
+
+    if email == "admin@biblioteca.com":
+        data_usuarios = usuarios()
+        return make_response(render_template('admin/seccion_usuarios.html', data = data_usuarios))
     else:
         return make_response(render_template('admin/acceso_restringido.html'))
     

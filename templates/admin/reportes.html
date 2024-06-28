@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='img/favicon.webp') }}"
+      type="image/webp"
+    />
+    <title>Biblioteca "Python"</title>
+  </head>
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
-  <link rel="icon" href="{{ url_for('static', filename='img/favicon.webp') }}" type="image/webp" />
-  <title>Biblioteca "Python"</title>
-</head>
-
-<body>
-  <div class="home_container">
-    <section class="home_header">
-      <h1 class="home_title">Biblioteca "Python"</h1>
-      <p>Este es el trabajo integrador de la materia Programación Web I</p>
-      <a href="/cerrar_sesion" class="button_logout">Cerrar sesión</a>
-    </section>
-    <form class="order" action="/seccion_libros" method="get">
-      <button class="button_order" type="submit">Seccion Libros</button>
-    </form>
-    <section class="reservas_section">
-      <div class="table_container">
-        <h1>Reporte de Préstamos</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>ID Reserva</th>
-              <th>Nombre Cliente</th>
-              <th>Nombre Libro</th>
-              <th>Libros restantes</th>
-              <th>Estado</th>
-              <th>Fecha Reserva</th>
-              <th>Fecha Devolución</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for reserva in reservas %}
-            <tr>
-              <td>{{ reserva.reserva_id }}</td>
-              <td>{{ reserva.cliente_nombre }}</td>
-              <td>{{ reserva.libro_nombre }}</td>
-              <td>{{ reserva.cantidad_disponible }}</td>
-              <td>{{ "Prestado" if reserva.estado_reserva == 1 else "Devuelto" }}</td>
-              <td>{{ reserva.fecha_prestamo }}</td>
-              <td>{{ reserva.fecha_devolucion if reserva.estado_reserva == 1 else "Devuelto" }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-    </section>
-  </div>
-</body>
+  <body>
+    <div class="home_container">
+      <section class="home_header">
+        <h1 class="home_title">Biblioteca "Python"</h1>
+        <p>Este es el trabajo integrador de la materia Programación Web I</p>
+        <a href="/cerrar_sesion" class="button_logout">Cerrar sesión</a>
+      </section>
+      <form class="order" action="/seccion_libros" method="get">
+        <button class="button_order" type="submit">Seccion Libros</button>
+      </form>
+      <form class="order" action="/seccion_usuarios" method="get">
+        <button class="button_order" type="submit">Seccion Usuarios</button>
+      </form>
+      <section class="reservas_section">
+        <div class="table_container">
+          <h1>Reporte de Préstamos</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>ID Reserva</th>
+                <th>Nombre Cliente</th>
+                <th>Nombre Libro</th>
+                <th>Libros restantes</th>
+                <th>Estado</th>
+                <th>Fecha Reserva</th>
+                <th>Fecha Devolución</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for reserva in reservas %}
+              <tr>
+                <td>{{ reserva.reserva_id }}</td>
+                <td>{{ reserva.cliente_nombre }}</td>
+                <td>{{ reserva.libro_nombre }}</td>
+                <td>{{ reserva.cantidad_disponible }}</td>
+                <td>
+                  {{ "Prestado" if reserva.estado_reserva == 1 else "Devuelto"
+                  }}
+                </td>
+                <td>{{ reserva.fecha_prestamo }}</td>
+                <td>
+                  {{ reserva.fecha_devolucion if reserva.estado_reserva == 1
+                  else "Devuelto" }}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>

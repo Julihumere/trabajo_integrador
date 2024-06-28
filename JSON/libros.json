@@ -1,14 +1,14 @@
 [
     {
-        "autor": "Gabriel Garc\u00c3\u00ada M\u00c3\u00a1rquez",
-        "cantidad_disponible": 3,
+        "autor": "Gabriel",
+        "cantidad_disponible": "3",
         "editorial": "Sudamericana",
         "fecha_publicacion": "1967-05-30",
         "genero": "Novela",
         "id_libro": 1,
         "picture": "https://imgs.search.brave.com/Owd-sos1iTSTSxnIW-IIAIN1Oto4MzsiQyZxBo3VHzA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFwdGVodVRJT0wu/anBn",
-        "publicacion": 1967,
-        "titulo": "Cien A\u00c3\u00b1os de Soledad"
+        "publicacion": "1967",
+        "titulo": "Cien a\u00f1os de soledad"
     },
     {
         "autor": "Miguel de Cervantes",

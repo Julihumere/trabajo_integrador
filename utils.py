@@ -38,6 +38,12 @@ def libros(libro_id=None):
             return None
         else:
             return data
+        
+# Obtener los usuarios
+def usuarios():
+    with open('JSON/clientes.json') as archivo_clientes:
+        data = json.load(archivo_clientes)
+        return data
 
 # Obtener datos del cliente
 def cliente(email, cliente_id=None):
