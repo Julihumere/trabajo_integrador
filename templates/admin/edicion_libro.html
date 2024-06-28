@@ -31,7 +31,7 @@
             class="register_box_input"
             type="text"
             name="autor"
-            value={{ libro.autor }}
+            value="{{ libro.autor }}"
         /></label>
         <label class="register_box_label_books"
           >Titulo
@@ -39,7 +39,7 @@
             class="register_box_input"
             type="text"
             name="titulo"
-            value={{ libro.titulo }}
+            value="{{ libro.titulo }}"
         /></label>
         <label class="register_box_label_books"
           >Año Publicacion
@@ -55,7 +55,7 @@
             class="register_box_input"
             type="text"
             name="editorial"
-            value={{ libro.editorial }}
+            value="{{ libro.editorial }}"
         /></label>
         <label class="register_box_label_books"
           >Cantidad Disponible
@@ -69,7 +69,7 @@
           >Fecha Publicacion
           <input
             class="register_box_input"
-            type="text"
+            type="date"
             name="fecha_publicacion"
             value={{ libro.fecha_publicacion }}
         /></label>
@@ -79,7 +79,7 @@
             class="register_box_input"
             type="text"
             name="genero"
-            value={{ libro.genero }}
+            value="{{ libro.genero }}"
         /></label>
         <label class="register_box_label_books"
         >Url Imagen
@@ -87,7 +87,7 @@
           class="register_box_input"
           type="text"
           name="picture"
-          value={{ libro.picture }}
+          value="{{ libro.picture }}"
         /></label>
         <input type="hidden" name="id_libro" value={{ libro.id_libro }} />
         <aside class="register_box_container_button">
