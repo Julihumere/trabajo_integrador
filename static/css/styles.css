@@ -483,3 +483,72 @@ body {
   width: 100%;
   text-decoration: none;
 }
+
+.reservas_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.table_container {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 50px auto;
+  width: 50vw;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.book_buttons_admin {
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  width: 60%;
+  text-decoration: none;
+  background-color: white;
+  justify-content: center;
+}
+
+.libro_edicion_registro_section {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  height: 40vh;
+  width: 50%;
+  border-radius: 40px;
+  padding: 40px;
+  padding-bottom: 85px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.register_box_label_books {
+  width: 50%;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
