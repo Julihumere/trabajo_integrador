@@ -196,24 +196,24 @@ def registro_edicion_libro(autor, cantidad_disponible, editorial, fecha_publicac
             data.append({
             "id_libro": len(data) + 1,
             "autor": autor,
-            "cantidad_disponible": cantidad_disponible,
+            "cantidad_disponible": int(cantidad_disponible),
             "editorial": editorial,
             "fecha_publicacion": fecha_publicacion,
             "genero": genero,
             "picture": picture,
-            "publicacion": publicacion,
+            "publicacion": int(publicacion),
             "titulo": titulo
             })
         else:
             for libro in data:
                 if libro['id_libro'] == id_libro:
                     libro['autor'] = autor
-                    libro['cantidad_disponible'] = cantidad_disponible
+                    libro['cantidad_disponible'] = int(cantidad_disponible)
                     libro['editorial'] = editorial
                     libro['fecha_publicacion'] = fecha_publicacion
                     libro['genero'] = genero
                     libro['picture'] = picture
-                    libro['publicacion'] = publicacion
+                    libro['publicacion'] = int(publicacion)
                     libro['titulo'] = titulo
                     break
     
