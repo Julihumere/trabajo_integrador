@@ -48,7 +48,7 @@
         </form>
 
         <div class="table_container">
-          <h1>Reporte de Préstamos</h1>
+          <h1>Reporte de Todos los Préstamos</h1>
           <table>
             <thead>
               <tr>
@@ -82,6 +82,51 @@
             </tbody>
           </table>
         </div>
+
+        <div class="table_container">
+          <h1>Reporte por Libro</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre de Libro</th>
+                <th>Cant. Prestados</th>
+                <th>Cant. Devueltos</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for libro in reservas_por_libro %}
+              <tr>
+                <td>{{ libro.titulo }}</td>
+                <td>{{ libro.prestados }}</td>
+                <td>{{ libro.devueltos }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table_container">
+          <h1>Reporte por Cliente</h1>
+          <table>
+            <thead>
+              <tr>
+                <th>Nombre de Cliente</th>
+                <th>Cant. Prestados</th>
+                <th>Cant. Devueltos</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for cliente in reservas_por_cliente %}
+              <tr>
+                <td>{{ cliente.nombre }}</td>
+                <td>{{ cliente.prestados }}</td>
+                <td>{{ cliente.devueltos }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
       </section>
     </div>
   </body>
