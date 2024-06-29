@@ -30,6 +30,23 @@
         <button class="button_order" type="submit">Seccion Usuarios</button>
       </form>
       <section class="reservas_section">
+        <form class="filter" action="/libros" method="post">
+          <select class="select_filter" name="tipo">
+            <option class="option_filter" value="socio">Socio</option>
+            <option class="option_filter" value="genero">Género</option>
+            <option class="option_filter" value="autor">Autor</option>
+            <option class="option_filter" value="editorial">Editorial</option>
+          </select>
+          <input
+            class="input_filter"
+            type="text"
+            name="texto"
+            value=""
+            placeholder="Buscar libro"
+          />
+          <button class="button_filter">Buscar</button>
+        </form>
+
         <div class="table_container">
           <h1>Reporte de Préstamos</h1>
           <table>
