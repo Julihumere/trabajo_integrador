@@ -144,17 +144,61 @@ def admin():
             reserva["cantidad_disponible"] = data_libro["cantidad_disponible"]
             reserva["cliente_nombre"] = data_cliente["nombre"] + " " + data_cliente["apellido"]
 
-            """ if reservas_por_libro == []:
-
+            if reservas_por_libro == []:
+                cantidad_devueltos =  0 if reserva["estado_reserva"] == 1 else 1
+                reservas_por_libro.append({
+                    'id_libro': data_libro["id_libro"],
+                    'titulo': data_libro["titulo"],
+                    'prestados': 1,
+                    'devueltos' : cantidad_devueltos
+                })
+            else:
+                se_encontro = False
                 for libro_report in reservas_por_libro:
-                    if data_cliente["id_cliente"] == libro_report["id_cliente"]:
+                    if data_libro["id_libro"] == libro_report["id_libro"]:
+                        se_encontro = True
                         if reserva["estado_reserva"] == 1:
                             libro_report["prestados"] += 1
                         else:
                             libro_report["prestados"] += 1
-                            libro_report["devueltos"] += 1 """
-
-        response = make_response(render_template('admin/reportes.html', reservas = all_reservas ))
+                            libro_report["devueltos"] += 1
+                if(not se_encontro):
+                    cantidad_devueltos =  0 if reserva["estado_reserva"] == 1 else 1
+                    reservas_por_libro.append({
+                    'id_libro': data_libro["id_libro"],
+                    'titulo': data_libro["titulo"],
+                    'prestados': 1,
+                    'devueltos' : cantidad_devueltos
+                })
+                
+            if reservas_por_cliente == []:
+                cantidad_devueltos =  0 if reserva["estado_reserva"] == 1 else 1
+                reservas_por_cliente.append({
+                    'id_cliente': data_cliente["id_cliente"],
+                    'nombre': data_cliente["nombre"],
+                    'prestados': 1,
+                    'devueltos' : cantidad_devueltos
+                })
+            else:
+                se_encontro = False
+                for cliente_report in reservas_por_cliente:
+                    if data_cliente["id_cliente"] == cliente_report["id_cliente"]:
+                        se_encontro = True
+                        if reserva["estado_reserva"] == 1:
+                            cliente_report["prestados"] += 1
+                        else:
+                            cliente_report["prestados"] += 1
+                            cliente_report["devueltos"] += 1
+                if(not se_encontro):
+                    cantidad_devueltos =  0 if reserva["estado_reserva"] == 1 else 1
+                    reservas_por_cliente.append({
+                    'id_cliente': data_cliente["id_cliente"],
+                    'nombre': data_cliente["nombre"],
+                    'prestados': 1,
+                    'devueltos' : cantidad_devueltos
+                })
+    
+        response = make_response(render_template('admin/reportes.html', reservas = all_reservas, reservas_por_libro = reservas_por_libro, reservas_por_cliente = reservas_por_cliente ))
         return response
     else:
         response = make_response(render_template('admin/acceso_restringido.html'))
