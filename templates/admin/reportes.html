@@ -20,7 +20,7 @@
     <div class="home_container">
       <section class="home_header">
         <h1 class="home_title">Biblioteca "Python"</h1>
-        <p>Este es el trabajo integrador de la materia Programación Web I</p>
+        <p>Trabajo integrador de Programación I</p>
         <a href="/cerrar_sesion" class="button_logout">Cerrar sesión</a>
       </section>
       <form class="order" action="/seccion_libros" method="get">
@@ -42,7 +42,6 @@
                 <th>Estado</th>
                 <th>Fecha Reserva</th>
                 <th>Fecha Devolución</th>
-                <th>Marcar estado</th>
               </tr>
             </thead>
             <tbody>
@@ -58,26 +57,6 @@
                 </td>
                 <td>{{ reserva.fecha_prestamo }}</td>
                 <td>{{ reserva.fecha_devolucion }}</td>
-                {% if reserva.estado_reserva == 1 %}
-                <td>
-                  <form
-                    action="/devolucion_exitosa"
-                    method="post"
-                    class="container_devolver_libro"
-                  >
-                    <input
-                      type="hidden"
-                      name="reserva_id"
-                      value="{{ reserva.libro_id }}"
-                    />
-                    <button class="button_devolver_libro" type="submit">
-                      Marcar como devuelto
-                    </button>
-                  </form>
-                </td>
-                {% else %}
-                <td>Devuelto</td>
-                {% endif %}
               </tr>
               {% endfor %}
             </tbody>
