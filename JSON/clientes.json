@@ -1,6 +1,6 @@
 [
     {
-        "apellido": "García",
+        "apellido": "Garc\u00eda",
         "direccion": "Calle Falsa 123",
         "documento": "11223344",
         "email": "pedro.garcia@example.com",
@@ -28,16 +28,6 @@
         "nombre": "Lautaro",
         "password": "1234",
         "telefono": "343242423424"
-    },
-    {
-        "apellido": "Picapiedras",
-        "direccion": "Lamadrid 1545",
-        "documento": "222222222",
-        "email": "pedropicapiedras@gmail.com",
-        "id_cliente": 9,
-        "nombre": "Pedro",
-        "password": "1234",
-        "telefono": "33333333333"
     },
     {
         "apellido": "Gonzales",

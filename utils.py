@@ -254,11 +254,10 @@ def registro_edicion_libro(autor, cantidad_disponible, editorial, fecha_publicac
         data = json.load(archivo_libros)
 
         if id_libro is None:
-
             for libro in data:
                 id_nuevo = 0
-                if cliente['id_libro'] > id_nuevo:
-                    id_nuevo = cliente['id_libro']
+                if libro['id_libro'] > id_nuevo:
+                    id_nuevo = libro['id_libro']
 
             data.append({
             "id_libro": id_nuevo + 1,
