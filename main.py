@@ -51,6 +51,33 @@ def funcion_registro():
         error = 'error'
         print(f"error: {error}")
         return render_template('registro.html', error=error)
+    
+# Pantalla de editar usuario
+@app.route('/editar_usuario')
+def editar_usuario_template():
+    email = request.cookies.get('email')
+    data = cliente(email)
+    print(f"data: {data}")
+    return render_template('editar_usuario.html', cliente=data)
+
+@app.route('/editar_usuario', methods=['POST'])
+def editar_usuario():
+        print('entre a editar usuario')
+        id_cliente = request.form['id_cliente'] 
+        print(f"id_cliente: {id_cliente}")
+        email = request.cookies.get('email')
+        nombre = str(request.form['nombre'])
+        apellido = str(request.form['apellido'])
+        documento = str(request.form['documento'])
+        direccion = str(request.form['direccion'])
+        telefono = str(request.form['telefono'])
+        password = str(request.form['password'])
+        if edicion_cliente(id_cliente, email, nombre, apellido, documento, direccion, telefono, password):
+            return redirect(url_for('libros_template'))
+        else:
+            error = 'error'
+            print(f"error: {error}")
+            return render_template('editar_usuario.html', error=error)
 
 @app.route('/registro_exitoso')
 def registro_exitoso_template():

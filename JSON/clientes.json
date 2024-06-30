@@ -10,16 +10,6 @@
         "telefono": "123-4567"
     },
     {
-        "apellido": "Picapiedras",
-        "direccion": "Piedrita 1234",
-        "documento": "3423424242424",
-        "email": "pedropicapiedras@gmail.com",
-        "id_cliente": 6,
-        "nombre": "Pedro",
-        "password": "Pedro1234",
-        "telefono": "342424242"
-    },
-    {
         "apellido": "admin",
         "direccion": "1",
         "documento": "1",
@@ -40,33 +30,13 @@
         "telefono": "343242423424"
     },
     {
-        "apellido": "Rata",
-        "direccion": "Piedrita 1234",
-        "documento": "4324244",
-        "email": "pedro@gmail.com",
+        "apellido": "Picapiedras",
+        "direccion": "Lamadrid 1545",
+        "documento": "222222222",
+        "email": "pedropicapiedras@gmail.com",
         "id_cliente": 9,
         "nombre": "Pedro",
-        "password": "Test1234",
-        "telefono": "343242423424"
-    },
-    {
-        "apellido": "amigo",
-        "direccion": "324244",
-        "documento": "4524324",
-        "email": "pedropicapiedras@gmail.com",
-        "id_cliente": 4,
-        "nombre": "Pedro",
-        "password": "3242424",
-        "telefono": "3242424"
-    },
-    {
-        "apellido": "Picapiedras",
-        "direccion": "Piedrita 1234",
-        "documento": "3423424242424",
-        "email": "prueba@gmail.com",
-        "id_cliente": 10,
-        "nombre": "Pedro",
-        "password": "Test1234",
-        "telefono": "343242423424"
+        "password": "1234",
+        "telefono": "33333333333"
     }
 ]

@@ -31,8 +31,34 @@ def registro(nombre, apellido, documento, direccion, telefono, email, password):
     
     return True
 
+# Edición de clientes
+def edicion_cliente(id_cliente, email, nombre, apellido, documento, direccion, telefono, password):
+    print('Edición de cliente')
+    with open('JSON/clientes.json', encoding='utf-8') as archivo_clientes:
+        data = json.load(archivo_clientes)
+        
+        print(f"Buscando cliente con id: {id_cliente}")
+        for cliente in data:
+            print(f"Cliente actual: {cliente['id_cliente'] == int(id_cliente)}")
+            if cliente['id_cliente'] == int(id_cliente):
+                print(f"Cliente encontrado: {cliente}")  # Depuración: Verificar si se encuentra el cliente
+                cliente['nombre'] = nombre
+                cliente['apellido'] = apellido
+                cliente['documento'] = documento
+                cliente['direccion'] = direccion
+                cliente['telefono'] = telefono
+                cliente['email'] = email
+                cliente['password'] = password
+                break
+
+    with open('JSON/clientes.json', 'w', encoding='utf-8') as archivo_clientes:
+        json.dump(data, archivo_clientes, ensure_ascii=False, indent=4)
+        return True
+
 # Logueo de clientes
 def login(email, password):
+    print('Logueo de cliente')
+
     with open('JSON/clientes.json', encoding='utf-8') as archivo_clientes:
         data = json.load(archivo_clientes)
         for cliente in data:
