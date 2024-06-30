@@ -85,7 +85,6 @@ def mis_reservas_template():
     email = request.cookies.get('email')
     data_cliente = cliente(email)
     data = mis_reservas(data_cliente['id_cliente'])
-    print(f"data: {data[0]['cliente']['nombre']}")
     return render_template('mis_reservas.html', data=data, cliente=data_cliente)
 
 @app.route('/registro_exitoso')
