@@ -3,15 +3,18 @@ from flask import json, redirect, url_for, make_response
 
 # Registro de clientes
 def registro(nombre, apellido, documento, direccion, telefono, email, password):
-    with open('JSON/clientes.json', encoding='utf-8') as archivo_clientes:
+    with open('JSON/clientes.json', 'r', encoding='utf-8') as archivo_clientes:
         data = json.load(archivo_clientes)
-        for cliente in data:
-            id_nuevo = 0
-            if cliente['id_cliente'] > id_nuevo:
-                id_nuevo = cliente['id_cliente'] 
 
-        data.append({
-            'id_cliente': id_nuevo + 1,
+        # Verifica si el email ya existe en los datos
+        for cliente in data:
+            if cliente['email'] == email:
+                return False
+
+        # Si el email no existe, agrega el nuevo cliente
+        id_nuevo = max(cliente['id_cliente'] for cliente in data) + 1 if data else 1
+        nuevo_cliente = {
+            'id_cliente': id_nuevo,
             'nombre': nombre,
             'apellido': apellido,
             'documento': documento,
@@ -19,10 +22,14 @@ def registro(nombre, apellido, documento, direccion, telefono, email, password):
             'telefono': telefono,
             'email': email,
             'password': password
-        })
+        }
+        data.append(nuevo_cliente)
+
+    # Guarda los datos actualizados en el archivo JSON
     with open('JSON/clientes.json', 'w', encoding='utf-8') as archivo_clientes:
-        json.dump(data, archivo_clientes)
-        return True
+        json.dump(data, archivo_clientes, ensure_ascii=False, indent=4)
+    
+    return True
 
 # Logueo de clientes
 def login(email, password):
@@ -30,8 +37,9 @@ def login(email, password):
         data = json.load(archivo_clientes)
         for cliente in data:
             if cliente['email'] == email and cliente['password'] == password:
+                print(cliente)
                 return True
-    return False
+        return False
 
 # Obtener los libros
 def libros(libro_id=None):

@@ -9,25 +9,27 @@ app.secret_key = '332432fsdfsdsdfs'
 
 @app.route('/')
 def hello():
-    return render_template('index.html')
+    return render_template('index.html', error=None)
 
 # Pantalla de Login
 @app.route('/', methods=['POST'])
 def funcion_login():
-    email = str(request.form['email'])
-    password = str(request.form['password'])
 
-    if login(email, password):
+        email = str(request.form['email'])
+        password = str(request.form['password'])
 
-        if email == "admin@biblioteca.com":
-            response = make_response(redirect(url_for('admin')))
+        if login(email, password):
+            if email == "admin@biblioteca.com":
+                response = make_response(redirect(url_for('admin')))
+            else:
+                response = make_response(redirect(url_for('libros_template')))
+            response.set_cookie('email', email)
+            return response
         else:
-            response = make_response(redirect(url_for('libros_template')))
-        response.set_cookie('email', email)
-        return response
-    else:
-        flash('Nombre de usuario o contraseña incorrectos.')
-        return redirect(url_for('hello'))
+            error = 'error'
+            print(f"error: {error}")
+            return render_template('index.html', error=error)
+
     
 # Pantalla de Registro
 @app.route('/registro',)
@@ -44,11 +46,15 @@ def funcion_registro():
     email = str(request.form['email'])
     password = str(request.form['password'])
     if registro(nombre, apellido, documento, direccion, telefono, email, password):
-        flash('Registro exitoso!')
-        return redirect(url_for('hello'))
+        return redirect(url_for('registro_exitoso_template'))
     else:
-        flash('Error en el registro.')
-        return redirect(url_for('registro_template'))
+        error = 'error'
+        print(f"error: {error}")
+        return render_template('registro.html', error=error)
+
+@app.route('/registro_exitoso')
+def registro_exitoso_template():
+    return render_template('registro_exitoso.html')
 
 #Pantalla de Libros
 @app.route('/libros')

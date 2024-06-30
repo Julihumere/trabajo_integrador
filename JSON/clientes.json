@@ -1,6 +1,6 @@
 [
     {
-        "apellido": "Garc\u00eda",
+        "apellido": "García",
         "direccion": "Calle Falsa 123",
         "documento": "11223344",
         "email": "pedro.garcia@example.com",
@@ -37,6 +37,36 @@
         "id_cliente": 8,
         "nombre": "Lautaro",
         "password": "",
+        "telefono": "343242423424"
+    },
+    {
+        "apellido": "Rata",
+        "direccion": "Piedrita 1234",
+        "documento": "4324244",
+        "email": "pedro@gmail.com",
+        "id_cliente": 9,
+        "nombre": "Pedro",
+        "password": "Test1234",
+        "telefono": "343242423424"
+    },
+    {
+        "apellido": "amigo",
+        "direccion": "324244",
+        "documento": "4524324",
+        "email": "pedropicapiedras@gmail.com",
+        "id_cliente": 4,
+        "nombre": "Pedro",
+        "password": "3242424",
+        "telefono": "3242424"
+    },
+    {
+        "apellido": "Picapiedras",
+        "direccion": "Piedrita 1234",
+        "documento": "3423424242424",
+        "email": "prueba@gmail.com",
+        "id_cliente": 10,
+        "nombre": "Pedro",
+        "password": "Test1234",
         "telefono": "343242423424"
     }
 ]

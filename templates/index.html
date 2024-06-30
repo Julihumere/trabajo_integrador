@@ -21,6 +21,7 @@
         <h1 class="home_title">Biblioteca "Python"</h1>
         <p>Este es el trabajo integrador de la materia Programación Web I</p>
       </section>
+
       <form action="/" method="post" class="home_section">
         <label class="box_label"
           >Email
@@ -39,8 +40,11 @@
             name="password"
             placeholder="Ingrese su contraseña"
         /></label>
+        {% if error == 'error' %}
+        <p class="box_error">Usuario o contraseña incorrectos</p>
+        {% endif %}
         <aside class="box_container_button">
-          <button class="box_button">Inicar sesión</button>
+          <button type="submit" class="box_button">Inicar sesión</button>
           <span>¿No tienes cuenta? <a href="/registro">Regístrate</a></span>
         </aside>
       </form>
