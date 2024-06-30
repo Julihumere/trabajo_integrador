@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <title>Biblioteca "Python"</title>
+  </head>
+
+  <body>
+    <div class="home_container">
+      <section class="books_header">
+        <h1 class="books_title">Biblioteca "Python"</h1>
+
+        <a href="/libros" class="button_logout">Volver</a>
+      </section>
+      <div class="table_container">
+        <h1>Mis reservas</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>ID Reserva</th>
+              <th>Nombre Cliente</th>
+              <th>Nombre Libro</th>
+              <th>Estado</th>
+              <th>Fecha Reserva</th>
+              <th>Fecha Devolución</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for reserva in data %}
+            <tr>
+              <td>{{ reserva.reserva_id }}</td>
+              <td>{{ reserva.cliente.nombre }}</td>
+              <td>{{ reserva.libro.titulo }}</td>
+              <td>
+                {{ "Prestado" if reserva.estado_reserva == 1 else "Devuelto" }}
+              </td>
+              <td>{{ reserva.fecha_prestamo }}</td>
+              <td>
+                {{ reserva.fecha_devolucion if reserva.estado_reserva == 1 else
+                "Devuelto" }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

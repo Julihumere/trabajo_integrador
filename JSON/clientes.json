@@ -1,42 +1,54 @@
 [
-    {
-        "apellido": "García",
-        "direccion": "Calle Falsa 123",
-        "documento": "11223344",
-        "email": "pedro.garcia@example.com",
-        "id_cliente": 3,
-        "nombre": "Pedro",
-        "password": "123456",
-        "telefono": "123-4567"
-    },
-    {
-        "apellido": "admin",
-        "direccion": "1",
-        "documento": "1",
-        "email": "admin@biblioteca.com",
-        "id_cliente": 7,
-        "nombre": "admin",
-        "password": "admin",
-        "telefono": "1"
-    },
-    {
-        "apellido": "Oyuela",
-        "direccion": "Piedrita 1234",
-        "documento": "343242423423",
-        "email": "lautaro@gmail.com",
-        "id_cliente": 8,
-        "nombre": "Lautaro",
-        "password": "",
-        "telefono": "343242423424"
-    },
-    {
-        "apellido": "Picapiedras",
-        "direccion": "Lamadrid 1545",
-        "documento": "222222222",
-        "email": "pedropicapiedras@gmail.com",
-        "id_cliente": 9,
-        "nombre": "Pedro",
-        "password": "1234",
-        "telefono": "33333333333"
-    }
+  {
+    "apellido": "García",
+    "direccion": "Calle Falsa 123",
+    "documento": "11223344",
+    "email": "pedro.garcia@example.com",
+    "id_cliente": 3,
+    "nombre": "Pedro",
+    "password": "123456",
+    "telefono": "123-4567"
+  },
+
+  {
+    "apellido": "admin",
+    "direccion": "1",
+    "documento": "1",
+    "email": "admin@biblioteca.com",
+    "id_cliente": 7,
+    "nombre": "admin",
+    "password": "admin",
+    "telefono": "1"
+  },
+
+  {
+    "apellido": "Oyuela",
+    "direccion": "Piedrita 1234",
+    "documento": "343242423423",
+    "email": "lautaro@gmail.com",
+    "id_cliente": 8,
+    "nombre": "Lautaro",
+    "password": "",
+    "telefono": "343242423424"
+  },
+  {
+    "apellido": "Picapiedras",
+    "direccion": "Lamadrid 1545",
+    "documento": "222222222",
+    "email": "pedropicapiedras@gmail.com",
+    "id_cliente": 9,
+    "nombre": "Pedro",
+    "password": "1234",
+    "telefono": "33333333333"
+  },
+  {
+    "apellido": "Gonzales",
+    "direccion": "Lamadrid 1545",
+    "documento": "33333333333",
+    "email": "carlos@example.com",
+    "id_cliente": 10,
+    "nombre": "Carlos",
+    "password": "Test1234",
+    "telefono": "222222222222"
+  }
 ]

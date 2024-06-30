@@ -79,6 +79,15 @@ def editar_usuario():
             print(f"error: {error}")
             return render_template('editar_usuario.html', error=error)
 
+
+@app.route('/mis_reservas')
+def mis_reservas_template():
+    email = request.cookies.get('email')
+    data_cliente = cliente(email)
+    data = mis_reservas(data_cliente['id_cliente'])
+    print(f"data: {data[0]['cliente']['nombre']}")
+    return render_template('mis_reservas.html', data=data, cliente=data_cliente)
+
 @app.route('/registro_exitoso')
 def registro_exitoso_template():
     return render_template('registro_exitoso.html')
@@ -111,6 +120,8 @@ def filtro_libros_template():
     texto = str(request.form['texto'])
     data = filtro_libros(tipo, texto)
     return render_template('libros.html', data=data, cliente=data_cliente)
+
+
 
 # Ordenar por cantidad de libros
 @app.route('/ordenar', methods=['POST'])
@@ -170,12 +181,14 @@ def admin():
         reservas_por_cliente = []
         all_reservas = reservas()
         for reserva in all_reservas:
+            print(reserva)
             data_cliente = cliente(None, reserva["cliente_id"])
             data_libro = libros(reserva["libro_id"])
 
             reserva["libro_nombre"] = data_libro["titulo"]
             reserva["cantidad_disponible"] = data_libro["cantidad_disponible"]
             reserva["cliente_nombre"] = data_cliente["nombre"] + " " + data_cliente["apellido"]
+ 
 
             if reservas_por_libro == []:
                 cantidad_devueltos =  0 if reserva["estado_reserva"] == 1 else 1
@@ -230,6 +243,8 @@ def admin():
                     'prestados': 1,
                     'devueltos' : cantidad_devueltos
                 })
+                    
+                    print(f'reservas: {all_reservas}')
     
         response = make_response(render_template('admin/reportes.html', reservas = all_reservas, reservas_por_libro = reservas_por_libro, reservas_por_cliente = reservas_por_cliente ))
         return response

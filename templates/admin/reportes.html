@@ -42,6 +42,7 @@
                 <th>Estado</th>
                 <th>Fecha Reserva</th>
                 <th>Fecha Devolución</th>
+                <th>Marcar estado</th>
               </tr>
             </thead>
             <tbody>
@@ -56,10 +57,27 @@
                   }}
                 </td>
                 <td>{{ reserva.fecha_prestamo }}</td>
+                <td>{{ reserva.fecha_devolucion }}</td>
+                {% if reserva.estado_reserva == 1 %}
                 <td>
-                  {{ reserva.fecha_devolucion if reserva.estado_reserva == 1
-                  else "Devuelto" }}
+                  <form
+                    action="/devolucion_exitosa"
+                    method="post"
+                    class="container_devolver_libro"
+                  >
+                    <input
+                      type="hidden"
+                      name="reserva_id"
+                      value="{{ reserva.libro_id }}"
+                    />
+                    <button class="button_devolver_libro" type="submit">
+                      Marcar como devuelto
+                    </button>
+                  </form>
                 </td>
+                {% else %}
+                <td>Devuelto</td>
+                {% endif %}
               </tr>
               {% endfor %}
             </tbody>

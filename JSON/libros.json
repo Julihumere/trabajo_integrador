@@ -8,11 +8,11 @@
         "id_libro": 1,
         "picture": "https://imgs.search.brave.com/Owd-sos1iTSTSxnIW-IIAIN1Oto4MzsiQyZxBo3VHzA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFwdGVodVRJT0wu/anBn",
         "publicacion": 1967,
-        "titulo": "Cien años de sóledad"
+        "titulo": "Cien a\u00f1os de s\u00f3ledad"
     },
     {
         "autor": "Miguel de Cervantes",
-        "cantidad_disponible": 1,
+        "cantidad_disponible": 0,
         "editorial": "Francisco de Robles",
         "fecha_publicacion": "1605-01-16",
         "genero": "Novela",
@@ -22,7 +22,7 @@
         "titulo": "Don Quijote de la Mancha"
     },
     {
-        "autor": "Carlos Ruiz Zafón",
+        "autor": "Carlos Ruiz Zaf\u00f3n",
         "cantidad_disponible": 4,
         "editorial": "Planeta",
         "fecha_publicacion": "2001-01-01",
@@ -37,18 +37,18 @@
         "cantidad_disponible": 5,
         "editorial": "Secker & Warburg",
         "fecha_publicacion": "1949-06-08",
-        "genero": "DistopÃƒÂ­a",
+        "genero": "Distop\u00c3\u0192\u00c2\u00ada",
         "id_libro": 4,
         "picture": "https://imgs.search.brave.com/LTNWNd1amvJ8RDBmq5WNlEuMrvHd6Rqa-lwO3NmNpkQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/dHhhbGFwYXJ0YS5l/dXMvQXJ0aWN1bG9z/L21lZC8xOTg0Li1M/YS1ub3ZlbGEtZ3Jh/ZmljYS5qcGc",
         "publicacion": 1949,
         "titulo": "1984"
     },
     {
-        "autor": "Antoine de Saint-ExupÃƒÂ©ry",
-        "cantidad_disponible": 5,
+        "autor": "Antoine de Saint-Exup\u00c3\u0192\u00c2\u00a9ry",
+        "cantidad_disponible": 4,
         "editorial": "Reynal & Hitchcock",
         "fecha_publicacion": "1943-04-06",
-        "genero": "FÃƒÂ¡bula",
+        "genero": "F\u00c3\u0192\u00c2\u00a1bula",
         "id_libro": 5,
         "picture": "https://imgs.search.brave.com/LSkzL5IKFJCifEUekF3xmRw0CwjORxy3jiexvq2Jkqw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFaSHpySkVPT1Mu/anBn",
         "publicacion": 1943,
@@ -63,11 +63,11 @@
         "id_libro": 6,
         "picture": "https://imgs.search.brave.com/Vux7xhGfqkmms-CodE1z1VGwtevt1aAg1jqL_VNB9fc/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/cmVzdW1lbmxpYnJv/LmNvbS9pbWcvbGli/cm9zL21hdGFyLWEt/dW4tcnVpc2Vub3Iu/anBn",
         "publicacion": 1960,
-        "titulo": "Matar a Ruiseñor"
+        "titulo": "Matar a Ruise\u00f1or"
     },
     {
-        "autor": "Fiódor Dostoyevski",
-        "cantidad_disponible": 2,
+        "autor": "Fi\u00f3dor Dostoyevski",
+        "cantidad_disponible": 1,
         "editorial": "The Russian Messenger",
         "fecha_publicacion": "1866-01-01",
         "genero": "Novela",
@@ -77,7 +77,7 @@
         "titulo": "Crimen y Castigo"
     },
     {
-        "autor": "Gabriel Garcí­a Márquez",
+        "autor": "Gabriel Garc\u00ed\u00ada M\u00e1rquez",
         "cantidad_disponible": 4,
         "editorial": "Oveja Negra",
         "fecha_publicacion": "1985-01-01",
@@ -85,7 +85,7 @@
         "id_libro": 8,
         "picture": "https://imgs.search.brave.com/w3sj_6IYqa3P-80wjiscBrZXV50kYY3BIaMz3ktu4rY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/Lzcxbk9iUnFwa0NM/LmpwZw",
         "publicacion": 1985,
-        "titulo": "El Amor en los Tiempos del Cólera"
+        "titulo": "El Amor en los Tiempos del C\u00f3lera"
     },
     {
         "autor": "Jane Austen",
@@ -103,7 +103,7 @@
         "cantidad_disponible": 4,
         "editorial": "George Allen & Unwin",
         "fecha_publicacion": "1937-09-21",
-        "genero": "FantasÃƒÂ­a",
+        "genero": "Fantas\u00c3\u0192\u00c2\u00ada",
         "id_libro": 10,
         "picture": "https://imgs.search.brave.com/qV_UjgfOnJmSMyQrPftaJRykydQNlFKxFB7OUu9QtdE/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/YWdhcGVhLmNvbS9C/b29rZXQvRWwtSG9i/Yml0LWk3bjY3OTAy/ODkuanBn",
         "publicacion": 1937,
@@ -122,7 +122,7 @@
     },
     {
         "autor": "James Joyce",
-        "cantidad_disponible": 2,
+        "cantidad_disponible": 1,
         "editorial": "Sylvia Beach",
         "fecha_publicacion": "1922-02-02",
         "genero": "Modernismo",

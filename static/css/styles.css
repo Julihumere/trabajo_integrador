@@ -40,6 +40,23 @@ body {
   text-decoration: none;
 }
 
+.button_mis_reservas {
+  position: absolute;
+  top: 160px;
+  right: 50px;
+  background-color: #333;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 10%;
+  text-decoration: none;
+}
+
 /* PANTALLA DE LOGIN */
 
 .home_container {
@@ -592,4 +609,19 @@ tr:nth-child(even) {
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
+}
+
+.container_devolver_libro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button_devolver_libro {
+  background-color: blue;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
 }

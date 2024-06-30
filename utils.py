@@ -55,6 +55,19 @@ def edicion_cliente(id_cliente, email, nombre, apellido, documento, direccion, t
         json.dump(data, archivo_clientes, ensure_ascii=False, indent=4)
         return True
 
+# Obtener reservas del usuario con la info del usuario
+def mis_reservas(id_cliente):
+    with open('JSON/reservas.json', encoding='utf-8') as archivo_reservas:
+        data = json.load(archivo_reservas)
+        reservas = []
+        for reserva in data:
+            if reserva['cliente_id'] == id_cliente:
+                reserva['cliente'] = cliente(None, id_cliente)
+                reserva['libro'] = obtener_libro(reserva['libro_id'])
+                reservas.append(reserva)
+        return reservas
+
+
 # Logueo de clientes
 def login(email, password):
     print('Logueo de cliente')
@@ -106,6 +119,14 @@ def reservas():
     with open('JSON/reservas.json', encoding='utf-8') as archivo_libros:
         data = json.load(archivo_libros)
         return data
+
+def obtener_libro(id_libro):
+    with open('JSON/libros.json', encoding='utf-8') as archivo_libros:
+        data = json.load(archivo_libros)
+        for libro in data:
+            if libro['id_libro'] == id_libro:
+                return libro
+        return None
 
 # Filtro de libros
 def filtro_libros(tipo, texto):
