@@ -52,26 +52,3 @@ Este proyecto es un sistema de administración de una biblioteca desarrollado co
    ```
 
 2. Abre tu navegador y ve a `http://localhost:5000` para interactuar con el sistema de administración de la biblioteca.
-
-## Estructura del Proyecto
-
-- **app/**: Contiene el código principal de la aplicación.
-  - **templates/**: Contiene los archivos HTML.
-  - **static/**: Contiene los archivos CSS y otros archivos estáticos.
-  - **routes.py**: Define las rutas de la aplicación.
-  - **models.py**: Define los modelos de datos.
-  - **forms.py**: Define los formularios.
-  - **\_\_init\_\_.py**: Inicializa la aplicación y la base de datos.
-
-## Rutas Principales
-
-- `/`: Página de inicio
-- `/usuarios`: Lista de usuarios
-- `/usuarios/crear`: Crear un nuevo usuario
-- `/usuarios/editar/<id>`: Editar un usuario existente
-- `/usuarios/eliminar/<id>`: Eliminar un usuario
-- `/libros`: Lista de libros
-- `/libros/crear`: Crear un nuevo libro
-- `/libros/eliminar/<id>`: Eliminar un libro
-- `/reportes/reservas`: Generar reporte de reservas de libros
-- `/reportes/devoluciones`: Generar reporte de devoluciones de libros
