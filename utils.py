@@ -311,4 +311,15 @@ def eliminar_usuario(id_cliente):
         json.dump(nuevos_clientes, archivo_clientes, indent=4)
         return True    
 
+def eliminar_reportes_por_cliente(id_cliente):
+    with open('JSON/reservas.json', encoding='utf-8') as archivo_reservas:
+        data = json.load(archivo_reservas)
+        nuevas_reservas = []
+        for reserva in data:
+            if reserva['cliente_id'] != id_cliente:
+                nuevas_reservas.append(reserva)
+
+    with open('JSON/reservas.json', 'w', encoding='utf-8') as archivo_reservas:
+        json.dump(nuevas_reservas, archivo_reservas, indent=4)
+        return True   
     

@@ -299,6 +299,7 @@ def admin_usuarios():
 
         if accion == 'eliminar':
             eliminar_usuario(int(id_cliente))
+            eliminar_reportes_por_cliente(int(id_cliente))
             return render_template('admin/satisfactorio.html', accion="eliminacion", tipo="usuario")
         else:
             return render_template('admin/registro_usuario.html')
