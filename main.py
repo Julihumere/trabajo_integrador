@@ -218,7 +218,7 @@ def admin():
                 cantidad_devueltos =  0 if reserva["estado_reserva"] == 1 else 1
                 reservas_por_cliente.append({
                     'id_cliente': data_cliente["id_cliente"],
-                    'nombre': data_cliente["nombre"],
+                    'nombre': data_cliente["nombre"] + " " + data_cliente["apellido"],
                     'prestados': 1,
                     'devueltos' : cantidad_devueltos
                 })
@@ -236,7 +236,7 @@ def admin():
                     cantidad_devueltos =  0 if reserva["estado_reserva"] == 1 else 1
                     reservas_por_cliente.append({
                     'id_cliente': data_cliente["id_cliente"],
-                    'nombre': data_cliente["nombre"],
+                    'nombre': data_cliente["nombre"] + " " + data_cliente["apellido"],
                     'prestados': 1,
                     'devueltos' : cantidad_devueltos
                 })
