@@ -120,8 +120,6 @@ def filtro_libros_template():
     data = filtro_libros(tipo, texto)
     return render_template('libros.html', data=data, cliente=data_cliente)
 
-
-
 # Ordenar por cantidad de libros
 @app.route('/ordenar', methods=['POST'])
 def ordenar_template():

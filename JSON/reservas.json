@@ -38,5 +38,21 @@
         "fecha_prestamo": "2024-06-30",
         "libro_id": 6,
         "reserva_id": 5
+    },
+    {
+        "cliente_id": 11,
+        "estado_reserva": 2,
+        "fecha_devolucion": "2024-07-11",
+        "fecha_prestamo": "2024-06-30",
+        "libro_id": 6,
+        "reserva_id": 6
+    },
+    {
+        "cliente_id": 12,
+        "estado_reserva": 2,
+        "fecha_devolucion": "2024-07-19",
+        "fecha_prestamo": "2024-06-30",
+        "libro_id": 8,
+        "reserva_id": 7
     }
 ]

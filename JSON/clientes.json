@@ -48,5 +48,25 @@
         "nombre": "Carlos",
         "password": "Test1234",
         "telefono": "222222222222"
+    },
+    {
+        "apellido": "Urquiza",
+        "direccion": "Piedrita 1234",
+        "documento": "1111111111111",
+        "email": "carla@gmail.com",
+        "id_cliente": 11,
+        "nombre": "Carla",
+        "password": "Test1234",
+        "telefono": "3456546456"
+    },
+    {
+        "apellido": "Lopez ",
+        "direccion": "Piedrita 1234",
+        "documento": "22222232323",
+        "email": "diego@gmail.com",
+        "id_cliente": 12,
+        "nombre": "Diego Armando",
+        "password": "Test1234",
+        "telefono": "1111111111111"
     }
 ]
